@@ -8,19 +8,31 @@ close all;
 clear;
 
 % Dimension de l'espace
-n = 50;
+n = 30;
+
+% L'utilisateur choisit le nbre de points de départ
+nb_points = 0;
+while (nb_points <1) || (nb_points >= n)
+    nb_points = input( 'Combien de points de départs ? ' );
+end
 
 % Affichage de la carte de potentiel
-P = matrice_poids('binaire', n);
+P = matrice_poids('constant', n);
+figure(2);
 imagesc(P); axis image; axis off;colormap gray(256);
-hold on;
 
 % Choix point de départ
-disp('Point de départ:');
-ind_s = round(ginput(1));
-ind_s = [ind_s(2), ind_s(1)];
-disp(ind_s)
-plot( ind_s(:,2), ind_s(:,1), 'rx' );
+disp('Point(s) de départ:');
+points = 0;
+ind_s = [];
+while points < nb_points
+    hold on;
+    nouveau = round(ginput(1));
+    % ind_s = [2, 15]; % pour la position du rapport en mode binaire
+    ind_s = [ind_s; nouveau(2), nouveau(1)];
+    plot( nouveau(1), nouveau(2), 'rx' );
+    points = points + 1;
+end
 hold off;
 
 %% Initialisation algorithme
@@ -56,7 +68,7 @@ end
 sommets_visites = size(ind_s,1);
 nb_iter_max = n^2+1;
 iter = 0;
-figure(5);
+figure(3);
 while (iter<nb_iter_max) && (sommets_visites ~= n^2)
     iter = iter + 1;
     
@@ -81,7 +93,7 @@ while (iter<nb_iter_max) && (sommets_visites ~= n^2)
     ind_WV = sub2ind(size(P), WV(:,1), WV(:,2));
     [~,ind] = min(D(ind_WV));
     
-    % selected vertex
+    % Point choisi
     i = WV(ind,1);
     j = WV(ind,2);
     WV(ind,:) = [];  % pop
@@ -102,12 +114,22 @@ while (iter<nb_iter_max) && (sommets_visites ~= n^2)
 
     subplot(1,2,2)
     imagesc(S); axis image; axis off;colormap gray(256);
+    hold on;
+    plot( ind_s(:,2), ind_s(:,1), 'rx' );
+    hold off;
 end
 
-figure();
+figure(4);
 x = 0:1/(n-1):1;
 [X,Y] = meshgrid(x,x);
 contourf(X,1-Y,D,15);
+hold on;
+pts_x = X(ind_s(:,1),ind_s(:,2));
+pts_x = pts_x(1,:);
+pts_y = Y(ind_s(:,1),ind_s(:,2));
+pts_y = pts_y(:,1);
+plot( pts_x, 1-pts_y, 'rx' );
+hold off;
 
 % Le réseau de neurones
 layers = [

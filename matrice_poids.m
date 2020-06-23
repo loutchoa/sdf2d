@@ -17,8 +17,8 @@ switch nom
     case 'pics'
         P = rescale( peaks(n) )+0.01;
     case 'binaire'
-        P = ones(n); 
-        P(1:end/2,:) = .1;
+        P = ones(n)-0.25; 
+        P(1:end/2,:) = .25;
     case 'angle'
         x = 0:1/(n-1):1;
         [X,Y] = meshgrid(x,0:1/(n-1):1);

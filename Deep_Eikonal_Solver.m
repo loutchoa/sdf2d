@@ -17,7 +17,7 @@ while (nb_points <1) || (nb_points >= n)
 end
 
 % Affichage de la carte de potentiel
-P = matrice_poids('constant', n);
+P = matrice_poids('binaire', n);
 figure(2);
 imagesc(P); axis image; axis off;colormap gray(256);
 
@@ -55,7 +55,7 @@ S = ones(n);
 S(sub2ind(size(P), ind_s(:,1), ind_s(:,2))) = visited;
 
 % WaveFront
-WV = [];
+WV = MinHeap(min(round((4*n^2)/5),2^48));
 
 % Newly visited points
 NVP = ind_s;
@@ -66,7 +66,7 @@ if verbose
 end
 
 sommets_visites = size(ind_s,1);
-nb_iter_max = n^2+1;
+nb_iter_max = n^2+1; 
 iter = 0;
 figure(3);
 while (iter<nb_iter_max) && (sommets_visites ~= n^2)
@@ -83,20 +83,31 @@ while (iter<nb_iter_max) && (sommets_visites ~= n^2)
     D = Local_Numerical_Solver(A,D,P);
     
     % "Tag each p in A as wavefront"
+    for i=1:size(A,1)
+        
+        % On stocke des key-value dans le tas binaire
+        % key = distance
+        kv.key = D(A(i,1), A(i,2));
+        % value = coordonnées
+        kv.value = A(i,:);
+        
+        % Si c'est un nouveau point, on l'insert dans le wavefront
+        if S(sub2ind(size(P), A(i,1), A(i,2))) == not_visited
+            WV.InsertKey(kv);
+        % Sinon on le met à jour avec sa nouvelle distance
+        else
+            WV.Update(kv);
+        end
+    end
     S(sub2ind(size(P), A(:,1), A(:,2))) = wavefront;
-    WV = [WV; A];    
-    % On enlève les doublons dans le WV
-    WV = unique(WV,'rows','stable');
     
     % "Tag the least distant wavefront point as visited"
     % On choisit le point du front d'onde de distance minimal
-    ind_WV = sub2ind(size(P), WV(:,1), WV(:,2));
-    [~,ind] = min(D(ind_WV));
+    min = WV.ExtractMin();
     
     % Point choisi
-    i = WV(ind,1);
-    j = WV(ind,2);
-    WV(ind,:) = [];  % pop
+    i = min.value(1);
+    j = min.value(2);
     S(i,j) = visited; 
     sommets_visites = sommets_visites + 1;
     
@@ -130,6 +141,7 @@ pts_y = Y(ind_s(:,1),ind_s(:,2));
 pts_y = pts_y(:,1);
 plot( pts_x, 1-pts_y, 'rx' );
 hold off;
+daspect([1 1 1]);
 
 % Le réseau de neurones
 layers = [

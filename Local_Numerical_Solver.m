@@ -1,4 +1,4 @@
-function D = Local_Numerical_Solver(A,D,P)
+function D = Local_Numerical_Solver(A,D,P,nbvoisins)
 %   Approximation locale du gradient
 %
 %   D = Local_Numerical_Solver(A,D,P)
@@ -17,7 +17,8 @@ for p = 1:size(A,1)
     i = A(p,1);
     j = A(p,2);
     
-    voisins = points_adjacents4(A(p,:),n,"avec");
+    voisins = points_adjacents(A(p,:),n,"avec",nbvoisins);
+    
     % t1 = min{u_i-1,j ,u_i+1,j}
     t1 = min(distance(D,n,voisins(1:2,:)));
     % t2 = min{u_i,j-1 ,u_i,j+1}
@@ -32,8 +33,23 @@ for p = 1:size(A,1)
     else
         u_p = min(t1,t2) + h_pondere;
     end
-    if D(i,j) > u_p
-       D(i,j) = u_p; 
+    
+    u_p_diag = inf;
+    if nbvoisins == 8
+        % t3 = min{u_i+1,j+1 ,u_i-1,j-1}
+        t3 = min(distance(D,n,voisins(5:6,:)));
+        % t4 = min{u_i-1,j+1 ,u_i+1,j-1}
+        t4 = min(distance(D,n,voisins(7:8,:)));
+        
+        if abs(t4-t3) < sqrt(2)*h_pondere 
+            u_p_diag = (t3+t4+sqrt(4*h_pondere^2-(t4-t3)^2))/2;
+        else
+            u_p_diag = min(t3,t4) + sqrt(2)*h_pondere;
+        end
+    end
+    
+    if D(i,j) > min(u_p,u_p_diag)
+       D(i,j) = min(u_p,u_p_diag); 
     end
 end
 end

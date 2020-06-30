@@ -8,7 +8,7 @@ close all;
 clear;
 
 % Dimension de l'espace
-n = 30;
+n = 200;
 
 % L'utilisateur choisit le nbre de points de départ
 nb_points = 0;
@@ -17,7 +17,7 @@ while (nb_points <1) || (nb_points >= n)
 end
 
 % Affichage de la carte de potentiel
-P = matrice_poids('binaire', n);
+P = matrice_poids('constant', n);
 figure(2);
 imagesc(P); axis image; axis off;colormap gray(256);
 
@@ -55,7 +55,7 @@ S = ones(n);
 S(sub2ind(size(P), ind_s(:,1), ind_s(:,2))) = visited;
 
 % WaveFront
-WV = MinHeap(min(round((4*n^2)/5),2^48));
+WV = MinHeap(min(n^2,2^48));
 
 % Newly visited points
 NVP = ind_s;
@@ -67,20 +67,21 @@ end
 
 sommets_visites = size(ind_s,1);
 nb_iter_max = n^2+1; 
+nbvoisins = 8;
 iter = 0;
-figure(3);
 while (iter<nb_iter_max) && (sommets_visites ~= n^2)
     iter = iter + 1;
     
     % "Denote the points adjacent to the newly visited points as A"
-    A = points_adjacents4(NVP,n,"gestion bord");
+    A = points_adjacents(NVP,n,"gestion bord",nbvoisins);
+    
     % On ne garde que les sommets qui n'ont pas encore été visités
     Non_visite = S(sub2ind(size(P), A(:,1), A(:,2))) ~= visited;
     A = A([Non_visite Non_visite]);
     A = reshape(A,length(A)/2,2);
     
     % "Estimate u(p) for p in A based on visited points"
-    D = Local_Numerical_Solver(A,D,P);
+    D = Local_Numerical_Solver(A,D,P,nbvoisins);
     
     % "Tag each p in A as wavefront"
     for i=1:size(A,1)
@@ -117,18 +118,19 @@ while (iter<nb_iter_max) && (sommets_visites ~= n^2)
     if verbose
         waitbar(iter/nb_iter_max, b, sprintf('Performing Fast Marching algorithm, iteration %d.', iter) );
     end
-    subplot(1,2,1)
-    imagesc(D); axis image; axis off;%colormap default;
-    hold on;
-    plot( ind_s(:,2), ind_s(:,1), 'rx' );
-    hold off;
-
-    subplot(1,2,2)
-    imagesc(S); axis image; axis off;colormap gray(256);
-    hold on;
-    plot( ind_s(:,2), ind_s(:,1), 'rx' );
-    hold off;
 end
+figure(3);
+subplot(1,2,1)
+imagesc(D); axis image; axis off;%colormap default;
+hold on;
+plot( ind_s(:,2), ind_s(:,1), 'rx' );
+hold off;
+
+subplot(1,2,2)
+imagesc(S); axis image; axis off;colormap gray(256);
+hold on;
+plot( ind_s(:,2), ind_s(:,1), 'rx' );
+hold off;
 
 figure(4);
 x = 0:1/(n-1):1;

@@ -8,7 +8,7 @@ close all;
 clear;
 
 % Dimension de l'espace
-n = 200;
+n = 100;
 
 % L'utilisateur choisit le nbre de points de départ
 nb_points = 0;
@@ -38,7 +38,7 @@ hold off;
 %% Initialisation algorithme
 
 % Gère l'affichage
-verbose = 1;
+verbose = 0;
 
 % Les trois états possibles d'un point
 visited = -1;
@@ -67,7 +67,7 @@ end
 
 sommets_visites = size(ind_s,1);
 nb_iter_max = n^2+1; 
-nbvoisins = 8;
+nbvoisins = 4;
 iter = 0;
 while (iter<nb_iter_max) && (sommets_visites ~= n^2)
     iter = iter + 1;

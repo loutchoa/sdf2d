@@ -8,9 +8,9 @@ Created on Thu Jul  2 17:31:16 2020
 
 # Inclure les fonction d'affichage "print"
 from __future__ import print_function
-# Inclure numpy abrégée np
+# Inclure numpy abregee np
 import numpy as np
-# Inclure les fonction d'affichage "plot" abrégée plt
+# Inclure les fonction d'affichage "plot" abregee plt
 from matplotlib import pyplot as plt
 # Inclure torch
 import torch
@@ -22,14 +22,14 @@ import copy
 
 #Creation de notre reseau
 
-# Inclure torch.nn abrégé nn
+# Inclure torch.nn abrege nn
 import torch.nn as nn
-# Inclure torch.nn.functional abrégé F
+# Inclure torch.nn.functional abrege F
 import torch.nn.functional as F
-#Inclure torch.optim abrégé optim
+#Inclure torch.optim abrege optim
 import torch.optim as optim
 
-# Déclaration de la classe pour le réseau de neurones
+# Declaration de la classe pour le reseau de neurones
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
@@ -79,7 +79,7 @@ def train_model(model, dataloaders, criterion, optimizer, num_epochs):
             # Iterate over data.
             for i, dat in enumerate(dataloaders[phase]):
                 inputs,objectif = dat
-                #Modifier les axes selon la forme de nos données
+                #Modifier les axes selon la forme de nos donnees
                 """inputs = np.swapaxes(inputs, 1, 3)
                 inputs = np.swapaxes(inputs, 2, 3)"""                 
                 inputs = inputs.to(device)
@@ -92,11 +92,10 @@ def train_model(model, dataloaders, criterion, optimizer, num_epochs):
                 # track history if only in train
                 with torch.set_grad_enabled(phase == 0):
 
-                    prédits = model(inputs)
-                    loss = criterion(prédits, objectif)
+                    predits = model(inputs)
+                    loss = criterion(predits, objectif)
 
-                    # .data obligatoire ?
-                    dist = abs(objectif.data - prédits)
+                    dist = abs(objectif - predits)
 
                     # backward + optimize only if in training phase
                     if phase == 0:
@@ -111,11 +110,11 @@ def train_model(model, dataloaders, criterion, optimizer, num_epochs):
             epoch_acc = running_corrects.double() / len(dataloaders[phase].dataset)
             
             if phase==0:
-                print('Entrainem. - Loss: {:.4f} Acc: {:.4f}'.format(epoch_loss, epoch_acc))
+                print('Entrainem. - Loss: {:.4f} Acc: {:.4f}'.format(epoch_loss, epoch_acc*100))
                 all_train.append(epoch_acc*100)
                 J0.append(epoch_loss)
             else:
-                print('Validation - Loss: {:.4f} Acc: {:.4f}'.format(epoch_loss, epoch_acc))
+                print('Validation - Loss: {:.4f} Acc: {:.4f}'.format(epoch_loss, epoch_acc*100))
                 J1.append(epoch_loss)
             # deep copy the model
             if phase == 1 and epoch_acc > best_acc:
@@ -128,24 +127,24 @@ def train_model(model, dataloaders, criterion, optimizer, num_epochs):
 
     time_elapsed = time.time() - since
     print('Training complete in {:.0f}m {:.0f}s'.format(time_elapsed // 60, time_elapsed % 60))
-    print('Best val Acc: {:4f}'.format(best_acc))
+    print('Best val Acc: {:4f}'.format(best_acc*100))
     epochs = list(range(1, num_epochs+1))
-    p1 = plt.plot(epochs,val_acc_history,label="Val. acc")
-    p2 = plt.plot(epochs,all_train, label="Train. acc")
-    plt.title("Précision du réseau")
+    plt.plot(epochs,val_acc_history,label="Val. acc")
+    plt.plot(epochs,all_train, label="Train. acc")
+    plt.title("Precision du reseau")
     plt.legend()
     plt.xlabel("Nombre d'epochs")
-    plt.ylabel("Précision en %")
+    plt.ylabel("Precision en %")
     plt.show()
-    p3 = plt.plot(epochs,all_val)
-    plt.title("Précision maximale atteinte par le réseau")
+    plt.plot(epochs,all_val)
+    plt.title("Precision maximale atteinte par le reseau")
     plt.legend()
     plt.xlabel("Nombre d'epochs")
-    plt.ylabel("Précision en %")
+    plt.ylabel("Precision en %")
     plt.show()
-    p4 = plt.plot(epochs,J0,label= "erreur train")
-    p5 = plt.plot(epochs,J1, label= "erreur validation")
-    plt.title("Erreur de sortie du réseau")
+    plt.plot(epochs,J0,label= "erreur train")
+    plt.plot(epochs,J1, label= "erreur validation")
+    plt.title("Erreur de sortie du reseau")
     plt.legend()
     plt.xlabel("Nombre d'epochs")
     plt.ylabel("Valeur de l'erreur")
@@ -155,8 +154,13 @@ def train_model(model, dataloaders, criterion, optimizer, num_epochs):
     model.load_state_dict(best_model_wts)
     return model, val_acc_history
 
+device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+print(device)
 
 net = Net()
+
+# Pour utiliser le GPU !
+net.to(device)
 
 # Mean Squared Error (MSE) as our loss function.
 criterion = nn.MSELoss()
@@ -164,25 +168,21 @@ criterion = nn.MSELoss()
 learning_rate = 1e-3
 
 # Choisir pour optimiseur le modèle de descente de gradient stochastique
-# L'optimiseur gère l'hyperparamètre de taux d'apprentissage "lr" (learning rate) et celui de mémoire
+# L'optimiseur gère l'hyperparamètre de taux d'apprentissage "lr" (learning rate) et celui de memoire
 optimizer = optim.SGD(net.parameters(), lr=learning_rate, momentum=0.9)
 
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 # N is batch size; D_in is input dimension;D_out is output dimension.
 N, D_in, D_out = 10000, 13, 1
 
-# Besoin de créer la base de données pour tester et mettre à jour le code
-# Données d'entrées
+# Besoin de creer la base de donnees pour tester et mettre à jour le code
+# Donnees d'entrees
 X = torch.randn(N, D_in)
 
-# Données objectifs
+# Donnees objectifs
 Y = torch.randn(N, D_out)
 
-# Pour utiliser le CPU !
-net.to(device)
-
-# On garde 8000 données pour l'apprentissage et 2000 pour les tests
+# On garde 8000 donnees pour l'apprentissage et 2000 pour les tests
 tab = torch.split(X,[8000,2000])
 trainset = tab[0]
 testset = tab[1]
@@ -201,10 +201,10 @@ testloader = torch.utils.data.DataLoader(testset, batch_size=16, shuffle=False)
 
 dataloaderz = [trainloader, testloader]
 
-# Le nombre d'epochs maximal définit le nombre de passages complets sur la base de données d'entraînement
-epochs = 100
+# Le nombre d'epochs maximal definit le nombre de passages complets sur la base de donnees d'entraînement
+epochs = 20
 
-print('Data Sets chargés')
+print('Data Sets charges')
 
 # Entrainement
 model_ft, hist = train_model(net, dataloaderz, criterion, optimizer, epochs)

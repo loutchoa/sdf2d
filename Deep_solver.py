@@ -29,6 +29,36 @@ import torch.nn.functional as F
 #Inclure torch.optim abrege optim
 import torch.optim as optim
 
+from matplotlib.lines import Line2D
+
+def plot_grad_flow(named_parameters):
+    '''Plots the gradients flowing through different layers in the net during training.
+    Can be used for checking for possible gradient vanishing / exploding problems.
+    
+    Usage: Plug this function in Trainer class after loss.backwards() as 
+    "plot_grad_flow(self.model.named_parameters())" to visualize the gradient flow'''
+    ave_grads = []
+    max_grads= []
+    layers = []
+    for n, p in named_parameters:
+        if(p.requires_grad) and ("bias" not in n):
+            layers.append(n)
+            ave_grads.append(p.grad.abs().mean())
+            max_grads.append(p.grad.abs().max())
+    plt.bar(np.arange(len(max_grads)), max_grads, alpha=0.1, lw=1, color="c")
+    plt.bar(np.arange(len(max_grads)), ave_grads, alpha=0.1, lw=1, color="b")
+    plt.hlines(0, 0, len(ave_grads)+1, lw=2, color="k" )
+    plt.xticks(range(0,len(ave_grads), 1), layers, rotation="vertical")
+    plt.xlim(left=0, right=len(ave_grads))
+    plt.ylim(bottom = -0.001, top=0.02) # zoom in on the lower gradient regions
+    plt.xlabel("Layers")
+    plt.ylabel("average gradient")
+    plt.title("Gradient flow")
+    plt.grid(True)
+    plt.legend([Line2D([0], [0], color="c", lw=4),
+                Line2D([0], [0], color="b", lw=4),
+                Line2D([0], [0], color="k", lw=4)], ['max-gradient', 'mean-gradient', 'zero-gradient'])
+
 # Declaration de la classe pour le reseau de neurones
 class Net(nn.Module):
     def __init__(self):
@@ -40,18 +70,21 @@ class Net(nn.Module):
         self.fc3 = nn.Linear(128,1)
         
     def forward(self, x):
-        x = F.relu(self.fc0(x))
-        x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
-        x = F.relu(self.fc3(x))
-        "x = x.view(x.size(0),-1)"
+        z = self.fc0(x)
+        z = F.relu(z)
+        z = self.fc1(z)
+        z = F.relu(z)
+        z = self.fc2(z)
+        z = F.relu(z)
+        z = self.fc3(z)
+        z = F.relu(z)
 
-        return x
+        return z
 
 
 def train_model(model, dataloaders, criterion, optimizer, num_epochs):
     
-    erreur = 1e-1
+    erreur = 2
     
     since = time.time()
     all_val = []
@@ -68,7 +101,7 @@ def train_model(model, dataloaders, criterion, optimizer, num_epochs):
 
         # Each epoch has a training and validation phase
         for phase in [0, 1]: #train 0 val 1
-            if phase == 0:
+            if not phase:
                 model.train()  # Set model to training mode
             else:
                 model.eval()   # Set model to evaluate mode
@@ -78,31 +111,41 @@ def train_model(model, dataloaders, criterion, optimizer, num_epochs):
 
             # Iterate over data.
             for i, dat in enumerate(dataloaders[phase]):
-                inputs,objectif = dat
-                #Modifier les axes selon la forme de nos donnees
-                """inputs = np.swapaxes(inputs, 1, 3)
-                inputs = np.swapaxes(inputs, 2, 3)"""                 
+                inputs,objectif = dat  
                 inputs = inputs.to(device)
                 objectif = objectif.to(device)
+
 
                 # zero the parameter gradients
                 optimizer.zero_grad()
 
                 # forward
                 # track history if only in train
-                with torch.set_grad_enabled(phase == 0):
+                with torch.set_grad_enabled(not phase):
 
+                    # We normalize inputs
+                    max_inputs,_ = inputs[:,1:].max(axis=1)
+                    min_inputs,_ = inputs[:,1:].min(axis=1)
+                    inputs[:,1:] = (inputs[:,1:] - min_inputs.repeat(12,1).transpose(0,1))/(max_inputs.repeat(12,1).transpose(0,1) - min_inputs.repeat(12,1).transpose(0,1))
+                    
                     predits = model(inputs)
+                    
+                    predits = predits*torch.unsqueeze((max_inputs-min_inputs),1) + torch.unsqueeze(min_inputs,1)
+                    
+                    predits = predits.view(objectif.size())
+                    #print(predits.squeeze())
+                    
                     loss = criterion(predits, objectif)
-
+                    
                     dist = abs(objectif - predits)
 
                     # backward + optimize only if in training phase
-                    if phase == 0:
+                    if not phase:
                         loss.backward()
                         optimizer.step()
 
                 # statistics
+                #print(loss.item())
                 running_loss += loss.item() * inputs.size(0)
                 running_corrects += torch.sum(dist < erreur)
 
@@ -117,10 +160,10 @@ def train_model(model, dataloaders, criterion, optimizer, num_epochs):
                 print('Validation - Loss: {:.4f} Acc: {:.4f}'.format(epoch_loss, epoch_acc*100))
                 J1.append(epoch_loss)
             # deep copy the model
-            if phase == 1 and epoch_acc > best_acc:
+            if phase and epoch_acc > best_acc:
                 best_acc = epoch_acc
                 best_model_wts = copy.deepcopy(model.state_dict())
-            if phase == 1:
+            if phase:
                 val_acc_history.append(epoch_acc*100)
                 all_val.append(best_acc*100)
         print()
@@ -160,16 +203,14 @@ print(device)
 net = Net()
 
 # Pour utiliser le GPU !
-net.to(device)
+net = net.to(device)
 
 # Mean Squared Error (MSE) as our loss function.
-criterion = nn.MSELoss()
-
-learning_rate = 1e-3
+critere = nn.MSELoss()
 
 # Choisir pour optimiseur le modèle de descente de gradient stochastique
 # L'optimiseur gère l'hyperparamètre de taux d'apprentissage "lr" (learning rate) et celui de memoire
-optimizer = optim.SGD(net.parameters(), lr=learning_rate, momentum=0.9)
+opti = optim.SGD(net.parameters(), lr=0.0001, momentum=0.9)
 
 
 # N is batch size; D_in is input dimension;D_out is output dimension.
@@ -177,10 +218,21 @@ N, D_in, D_out = 10000, 13, 1
 
 # Besoin de creer la base de donnees pour tester et mettre à jour le code
 # Donnees d'entrees
-X = torch.randn(N, D_in)
+X = torch.from_numpy(np.load('patch.npy')).float()
+#X = torch.randn(N,D_in)
+
 
 # Donnees objectifs
-Y = torch.randn(N, D_out)
+Y = torch.from_numpy(np.load('objectifs.npy')).float()
+#Y = Y.reshape(N,D_out)
+#Y = torch.randn(N)
+
+# Mélanger les données
+s= np.arange(X.shape[0])
+np.random.shuffle(s)
+
+X = X[s]
+Y = Y[s]
 
 # On garde 8000 donnees pour l'apprentissage et 2000 pour les tests
 tab = torch.split(X,[8000,2000])
@@ -189,7 +241,7 @@ testset = tab[1]
 
 tab = torch.split(Y,[8000,2000])
 trainlab = tab[0]
-testlab = tab[1] 
+testlab = tab[1]
 
 #definition de l'ensemble d'apprentissage
 from torch.utils import data
@@ -207,4 +259,4 @@ epochs = 20
 print('Data Sets charges')
 
 # Entrainement
-model_ft, hist = train_model(net, dataloaderz, criterion, optimizer, epochs)
+model_ft, hist = train_model(net, dataloaderz, critere, opti, epochs)

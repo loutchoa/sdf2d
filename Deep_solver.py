@@ -31,33 +31,6 @@ import torch.optim as optim
 
 from matplotlib.lines import Line2D
 
-def plot_grad_flow(named_parameters):
-    '''Plots the gradients flowing through different layers in the net during training.
-    Can be used for checking for possible gradient vanishing / exploding problems.
-    
-    Usage: Plug this function in Trainer class after loss.backwards() as 
-    "plot_grad_flow(self.model.named_parameters())" to visualize the gradient flow'''
-    ave_grads = []
-    max_grads= []
-    layers = []
-    for n, p in named_parameters:
-        if(p.requires_grad) and ("bias" not in n):
-            layers.append(n)
-            ave_grads.append(p.grad.abs().mean())
-            max_grads.append(p.grad.abs().max())
-    plt.bar(np.arange(len(max_grads)), max_grads, alpha=0.1, lw=1, color="c")
-    plt.bar(np.arange(len(max_grads)), ave_grads, alpha=0.1, lw=1, color="b")
-    plt.hlines(0, 0, len(ave_grads)+1, lw=2, color="k" )
-    plt.xticks(range(0,len(ave_grads), 1), layers, rotation="vertical")
-    plt.xlim(left=0, right=len(ave_grads))
-    plt.ylim(bottom = -0.001, top=0.02) # zoom in on the lower gradient regions
-    plt.xlabel("Layers")
-    plt.ylabel("average gradient")
-    plt.title("Gradient flow")
-    plt.grid(True)
-    plt.legend([Line2D([0], [0], color="c", lw=4),
-                Line2D([0], [0], color="b", lw=4),
-                Line2D([0], [0], color="k", lw=4)], ['max-gradient', 'mean-gradient', 'zero-gradient'])
 
 # Declaration de la classe pour le reseau de neurones
 class Net(nn.Module):
@@ -84,7 +57,7 @@ class Net(nn.Module):
 
 def train_model(model, dataloaders, criterion, optimizer, num_epochs):
     
-    erreur = 2
+    erreur = 1e-2
     
     since = time.time()
     all_val = []
@@ -118,22 +91,39 @@ def train_model(model, dataloaders, criterion, optimizer, num_epochs):
 
                 # zero the parameter gradients
                 optimizer.zero_grad()
-
+                
+                # We normalize inputs
+                # First : subtracting min
+                max_inputs,_ = inputs[:,1:].max(axis=1)
+                min_inputs,_ = inputs[:,1:].min(axis=1)
+                inputs[:,1:] = inputs[:,1:] - min_inputs.repeat(12,1).transpose(0,1)
+                
+                # Then : divide to normalize
+                # 0.5 mean magnitude
+                '''m = inputs[:,1:].mean(1, keepdim=True)
+                inputs = inputs/(2*m)
+                '''
+                # scaling [0;1]
+                inputs = inputs/(max_inputs.repeat(13,1).transpose(0,1) - min_inputs.repeat(13,1).transpose(0,1))                
+                
                 # forward
                 # track history if only in train
                 with torch.set_grad_enabled(not phase):
 
-                    # We normalize inputs
-                    max_inputs,_ = inputs[:,1:].max(axis=1)
-                    min_inputs,_ = inputs[:,1:].min(axis=1)
-                    inputs[:,1:] = (inputs[:,1:] - min_inputs.repeat(12,1).transpose(0,1))/(max_inputs.repeat(12,1).transpose(0,1) - min_inputs.repeat(12,1).transpose(0,1))
-                    
                     predits = model(inputs)
+                    #print(predits)
                     
-                    predits = predits*torch.unsqueeze((max_inputs-min_inputs),1) + torch.unsqueeze(min_inputs,1)
+                    # Rescale output
+                    # mean 
+                    '''predits = predits*2*m + torch.unsqueeze(min_inputs,1)
+                    '''
+                    # rescale
+                    #predits = predits*torch.unsqueeze((max_inputs-min_inputs),1) + torch.unsqueeze(min_inputs,1)
+                    
+                    # or normalize objectif
+                    objectif = (objectif-min_inputs)/(max_inputs - min_inputs)
                     
                     predits = predits.view(objectif.size())
-                    #print(predits.squeeze())
                     
                     loss = criterion(predits, objectif)
                     
@@ -210,7 +200,7 @@ critere = nn.MSELoss()
 
 # Choisir pour optimiseur le modèle de descente de gradient stochastique
 # L'optimiseur gère l'hyperparamètre de taux d'apprentissage "lr" (learning rate) et celui de memoire
-opti = optim.SGD(net.parameters(), lr=0.0001, momentum=0.9)
+opti = optim.SGD(net.parameters(), lr=0.01, momentum=0.90)
 
 
 # N is batch size; D_in is input dimension;D_out is output dimension.
@@ -248,15 +238,36 @@ from torch.utils import data
 trainset = data.TensorDataset(torch.Tensor(trainset),torch.Tensor(trainlab).type(torch.float))
 testset = data.TensorDataset(torch.Tensor(testset),torch.Tensor(testlab).type(torch.float))
 
-trainloader = torch.utils.data.DataLoader(trainset, batch_size=16, shuffle=False)
-testloader = torch.utils.data.DataLoader(testset, batch_size=16, shuffle=False)
+trainloader = torch.utils.data.DataLoader(trainset, batch_size=32, shuffle=False)
+testloader = torch.utils.data.DataLoader(testset, batch_size=32, shuffle=False)
 
 dataloaderz = [trainloader, testloader]
 
 # Le nombre d'epochs maximal definit le nombre de passages complets sur la base de donnees d'entraînement
-epochs = 20
+epochs = 100
 
 print('Data Sets charges')
 
 # Entrainement
 model_ft, hist = train_model(net, dataloaderz, critere, opti, epochs)
+torch.save(model_ft, "Reseau_entraine")
+local_solver = torch.load("Reseau_entraine")
+local_solver.eval()
+
+'''
+#Normalize data before putting it in the network  + to.(device)
+local_solver.to(device)
+input = input.to(device)
+
+# We normalize inputs
+max_input = inputs[1:].max()
+min_input = inputs[1:].min()
+input[1:] = input[1:] - min_input
+
+# Modify h also ?
+input = input/(max_input - min_input)
+
+predit = local_solver(inputs)
+
+predit = predit*(max_input-min_input) + min_input
+'''

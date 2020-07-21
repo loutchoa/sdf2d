@@ -17,7 +17,7 @@ while (nb_points <1) || (nb_points >= n)
 end
 
 % Affichage de la carte de potentiel
-P = matrice_poids('constant', n);
+P = matrice_poids('binaire', n);
 figure(2);
 imagesc(P); axis image; axis off;colormap gray(256);
 
@@ -38,7 +38,7 @@ hold off;
 %% Initialisation algorithme
 
 % Gère l'affichage
-verbose = 0;
+verbose = 1;
 
 % Les trois états possibles d'un point
 visited = -1;

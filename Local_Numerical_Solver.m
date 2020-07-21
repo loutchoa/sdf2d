@@ -11,7 +11,7 @@ function D = Local_Numerical_Solver(A,D,P,nbvoisins)
 n = length(D);
 
 % Pas de discrétisation 
-h = 1/(n-1);
+h = 1;
 
 for p = 1:size(A,1)
     i = A(p,1);

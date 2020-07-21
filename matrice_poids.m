@@ -11,18 +11,18 @@ switch nom
         [Y,X] = meshgrid(x,x);
         sigma = 0.8;
         P = exp( -(X.^2+Y.^2)/sigma^2 );
-        P = 1-rescale( P ) + 0.01;
+        P = 1-rescale( P ) + 0.5;
     case 'constant'
-        P = ones(n)*0.5;
+        P = ones(n);
     case 'pics'
-        P = rescale( peaks(n) )+0.01;
+        P = rescale( peaks(n) )+0.5;
     case 'binaire'
-        P = ones(n)-0.25; 
-        P(1:end/2,:) = .25;
+        P = ones(n)+0.25; 
+        P(1:end/2,:) = .75;
     case 'angle'
         x = 0:1/(n-1):1;
         [X,Y] = meshgrid(x,0:1/(n-1):1);
-        P = X.*Y + 0.01;
+        P = X.*Y + 0.5;
     otherwise %gradient      
-        P = ones(n).*(0:1/(n-1):1)+0.01;
+        P = ones(n).*(0.5:1/(n-1):1.5);
 end

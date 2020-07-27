@@ -29,8 +29,6 @@ import torch.nn.functional as F
 #Inclure torch.optim abrege optim
 import torch.optim as optim
 
-from matplotlib.lines import Line2D
-
 
 # Declaration de la classe pour le reseau de neurones
 class Net(nn.Module):
@@ -43,6 +41,7 @@ class Net(nn.Module):
         self.fc3 = nn.Linear(128,1)
         
     def forward(self, x):
+        
         z = self.fc0(x)
         z = F.relu(z)
         z = self.fc1(z)
@@ -51,7 +50,7 @@ class Net(nn.Module):
         z = F.relu(z)
         z = self.fc3(z)
         z = F.relu(z)
-
+        
         return z
 
 
@@ -249,10 +248,15 @@ epochs = 100
 print('Data Sets charges')
 
 # Entrainement
-model_ft, hist = train_model(net, dataloaderz, critere, opti, epochs)
-torch.save(model_ft, "Reseau_entraine")
-local_solver = torch.load("Reseau_entraine")
-local_solver.eval()
+local_solver, hist = train_model(net, dataloaderz, critere, opti, epochs)
+
+# Load a sample image
+example_data, example_result = next(iter(trainloader))
+example_data = example_data[0].to(device)
+# run the tracing
+traced_script_module = torch.jit.trace(local_solver, example_data)
+# save the converted model
+traced_script_module.save("local_solver.pt")
 
 '''
 #Normalize data before putting it in the network  + to.(device)
@@ -264,7 +268,6 @@ max_input = inputs[1:].max()
 min_input = inputs[1:].min()
 input[1:] = input[1:] - min_input
 
-# Modify h also ?
 input = input/(max_input - min_input)
 
 predit = local_solver(inputs)

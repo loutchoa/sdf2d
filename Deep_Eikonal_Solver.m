@@ -5,10 +5,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 close all;
-clear;
+%clear;
 
 % Dimension de l'espace
-n = 100;
+n = 50;
 
 % L'utilisateur choisit le nbre de points de départ
 nb_points = 0;
@@ -17,7 +17,7 @@ while (nb_points <1) || (nb_points >= n)
 end
 
 % Affichage de la carte de potentiel
-P = matrice_poids('binaire', n);
+P = matrice_poids('constant', n);
 figure(2);
 imagesc(P); axis image; axis off;colormap gray(256);
 
@@ -34,7 +34,6 @@ while points < nb_points
     points = points + 1;
 end
 hold off;
-
 %% Initialisation algorithme
 
 % Gère l'affichage
@@ -67,7 +66,7 @@ end
 
 sommets_visites = size(ind_s,1);
 nb_iter_max = n^2+1; 
-nbvoisins = 4;
+nbvoisins = 8;
 iter = 0;
 while (iter<nb_iter_max) && (sommets_visites ~= n^2)
     iter = iter + 1;
@@ -104,11 +103,11 @@ while (iter<nb_iter_max) && (sommets_visites ~= n^2)
     
     % "Tag the least distant wavefront point as visited"
     % On choisit le point du front d'onde de distance minimal
-    min = WV.ExtractMin();
+    minimum = WV.ExtractMin();
     
     % Point choisi
-    i = min.value(1);
-    j = min.value(2);
+    i = minimum.value(1);
+    j = minimum.value(2);
     S(i,j) = visited; 
     sommets_visites = sommets_visites + 1;
     
@@ -144,19 +143,3 @@ pts_y = pts_y(:,1);
 plot( pts_x, 1-pts_y, 'rx' );
 hold off;
 daspect([1 1 1]);
-
-% Le réseau de neurones
-layers = [
-    sequenceInputLayer(13,"Name","sequence")
-    fullyConnectedLayer(128,"Name","fc_1")
-    reluLayer("Name","relu_1")
-    fullyConnectedLayer(256,"Name","fc_2")
-    reluLayer("Name","relu_2")
-    fullyConnectedLayer(128,"Name","fc_3")
-    reluLayer("Name","relu_3")
-    fullyConnectedLayer(1,"Name","fc_4")
-    reluLayer("Name","relu_4")
-    regressionLayer("Name","regressionoutput")];
-
-% Affichage du réseau de neurones
-%plot(layerGraph(layers));

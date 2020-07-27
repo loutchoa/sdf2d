@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <math.h>
-//#include "mex.h"
+#include <mex.h>
 #include "minHeap.h"
 #include <stdio.h>
 #include <limits>
@@ -15,10 +15,10 @@ minHeap::minHeap(int N) {
 	heapSize = 0;
 
 	// Initialize Heap and H2P which are the same size.
-	Keys = (double*)calloc(max_size, sizeof(double));
-	H2P = (int*)calloc(max_size, sizeof(int));
+	Keys = (double*)mxCalloc(max_size, sizeof(double));
+	H2P = (int*)mxCalloc(max_size, sizeof(int));
 
-	P2H = (int*)calloc(N, sizeof(int));
+	P2H = (int*)mxCalloc(N, sizeof(int));
 	// Initialize P2H by setting all values to -1, signifying that
 	// there are no heap elements corresponding to the pixels.
 	for (int i = 0; i < N; i++) {
@@ -28,9 +28,9 @@ minHeap::minHeap(int N) {
 
 minHeap::~minHeap() {
 	// Destructor
-	free(Keys);
-	free(H2P);
-	free(P2H);
+	mxFree(Keys);
+	mxFree(H2P);
+	mxFree(P2H);
 }
 
 bool minHeap::isInHeap(int i) {
@@ -76,9 +76,9 @@ int minHeap::extractMin() {
 }
 
 void minHeap::print() {
-	cout << "\n MinHeap :   ";
-	for (int i = 0; i < heapSize; i++)
-		cout << "Distance " << Keys[i] << "for point " << H2P[i] << endl;
+		mexPrintf("\nminHeap:  ");
+		for(int k=0; k<heapSize; k++)
+				mexPrintf("%.3g ",Keys[k]);
 }
 
 void minHeap::heapify(int i) {

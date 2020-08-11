@@ -13,12 +13,5 @@
 
 3) Then open your project folder on matlab and make sure to have everything in the path (the mex file should be in the build/Release)
 
-4) Mex already created so you just have to call for the function :
+4) Mex already created so you just have to call for the function (there is an example)
  
-deep_eikonal_solver_c(P,sources,nbr_sources,h)
-% Execute deep eikonal solver algorithm (return distance matrix)
-% Parameters:
-%   P : weight domain 2D double array
-%   sources : 1D array as {x1,y1,x2,y2,...,xn,yn} (matlab coordinates)
-%   nbr_sources : the nomber of points sources
-%   h : distance between 2 adjacent points on the grid

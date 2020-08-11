@@ -15,7 +15,7 @@ __author__ = "François Lauze"
 
 
 
-def dmap(m,n,sources,pas):
+def dmap(m,n,sources,pas=1):
      """
      Parameters
      ----------
@@ -41,8 +41,8 @@ def dmap(m,n,sources,pas):
 
 def lemniscate_like():
      t = np.linspace(0,2*np.pi, num=100)
-     x = 180*np.cos(t)*np.sin(t) +190
-     y = 220*np.cos(3*t)*np.sin(t) + 225
+     x = 7.2*np.cos(t)*np.sin(t) +7.5
+     y = 8.8*np.cos(3*t)*np.sin(t) + 9
      x.shape = (-1,1)
      y.shape = (-1,1)
      return np.hstack((x,y))
@@ -80,14 +80,14 @@ def generer_data(m,n,sources,h,nb_data,afficher):
     listes_points = np.random.randint(0,min(m,n),(nb_data,2),dtype=int)
     # We don't want points that are actual sources so we redo until it's ok
     for i,pts in enumerate(listes_points) :
-        if np.any(np.equal(sources, pts).all(axis=1)) :
-            while np.any(np.equal(sources, pts).all(axis=1)) : 
+        if np.any(np.equal(sources, pts).all(axis=1)) or (np.sum(np.equal(sources, pts).all(axis=1))>1) :
+            while np.any(np.equal(sources, pts).all(axis=1)) or (np.sum(np.equal(sources, pts).all(axis=1))>1) : 
                 pts = np.random.randint(0,min(m,n),(1,2),dtype=int)
             listes_points[i] = pts
     Y = dmap(m,n,sources,h)
     if afficher :
         plt.imshow(Y)
-        plt.contour(Y, [i*20 for i in range(50)])
+        plt.contour(Y, [i*2 for i in range(50)])
         plt.show()
     return patch_to_data(points_adjacents(listes_points,Y,m,n),h) 
 
@@ -100,97 +100,100 @@ if __name__ == "__main__":
         print("Itérations " + str(k+1) + " sur 10")
         
         nb_data = 100  
+        h = 1
         
-        m = 500
-        n = 500 
-        sources = [[m-j,j] for j in np.linspace(100,400,301)]
-        sources = np.reshape(sources,(301,2))
-        h = np.random.random() + 0.5
+        m = 20
+        n = 20 
+        sources = [[m-j,j] for j in np.linspace(1,19,19)]
+        sources = np.reshape(sources,(19,2))
+        #h = np.random.random() + 0.5
         dat10,obj10 = generer_data(m,n,sources,h,nb_data,k==9)
         
-        m = 500
-        n = 500 
-        sources = [[j,j] for j in np.linspace(100,400,301)]
-        sources = np.reshape(sources,(301,2))
-        h = np.random.random() + 0.5
+        m = 20
+        n = 20
+        sources = [[j,j] for j in np.linspace(0,18,19)]
+        sources = np.reshape(sources,(19,2))
+        #h = np.random.random() + 0.5
         dat9,obj9 = generer_data(m,n,sources,h,nb_data,k==9)
         dat9 = np.append(dat10,dat9,axis=0)
         obj9 = np.append(obj10,obj9,axis=0) 
         
-        m = 500
-        n = 500 
-        sources = [[j,250] for j in np.linspace(100,400,301)]
-        sources = np.reshape(sources,(301,2))
-        h = np.random.random() + 0.5
+        m = 20
+        n = 20 
+        sources = [[j,10] for j in np.linspace(1,19,19)]
+        sources = np.reshape(sources,(19,2))
+        #h = np.random.random() + 0.5
         dat8,obj8 = generer_data(m,n,sources,h,nb_data,k==9)
         dat8 = np.append(dat9,dat8,axis=0)
         obj8 = np.append(obj9,obj8,axis=0) 
         
-        m = 500
-        n = 500 
+        m = 20
+        n = 20 
         sources = np.random.randint(0,min(m,n),(20,2),dtype=int)
-        h = np.random.random() + 0.5
+        for i,pts in enumerate(sources) :
+            if np.sum(np.equal(sources, pts).all(axis=1))>1 :
+                while np.sum(np.equal(sources, pts).all(axis=1))>1 : 
+                    pts = np.random.randint(0,min(m,n),(1,2),dtype=int)
+                sources[i] = pts
+        #h = np.random.random() + 0.5
         dat7,obj7 = generer_data(m,n,sources,h,nb_data,k==9)
         dat7 = np.append(dat8,dat7,axis=0)
         obj7 = np.append(obj8,obj7,axis=0) 
         
-        m = 500
-        n = 500    
-        sources = [[[100 + 25*i,100 + 25*j] for i in range(10)] for j in range(10)]
-        sources = np.reshape(sources,(100,2))
-        h = np.random.random() + 0.5
+        m = 20
+        n = 20    
+        sources = [[[i,j] for i in range(3)] for j in range(20)]
+        sources = np.reshape(sources,(60,2))
+        #h = np.random.random() + 0.5
         dat6,obj6 = generer_data(m,n,sources,h,nb_data,k==9)
         dat6 = np.append(dat7,dat6,axis=0)
         obj6 = np.append(obj7,obj6,axis=0) 
         
-        m = 500
-        n = 500
-        sources = [[250,j] for j in np.linspace(100,400,301)]
-        sources = np.reshape(sources,(301,2))
-        h = np.random.random() + 0.5
+        m = 20
+        n = 20
+        sources = [[10,j] for j in np.linspace(1,19,19)]
+        sources = np.reshape(sources,(19,2))
+        #h = np.random.random() + 0.5
         dat5,obj5 = generer_data(m,n,sources,h,nb_data,k==9)
         dat5 = np.append(dat6,dat5,axis=0)
         obj5 = np.append(obj6,obj5,axis=0) 
      
-        m = 500
-        n = 500    
+        m = 20
+        n = 20    
         t = np.linspace(0,2*np.pi, num=100)
-        x = 100*np.cos(t) + 250
-        y = 100*np.sin(t) + 250
+        x = 4*np.cos(t) + 10
+        y = 4*np.sin(t) + 10
         x.shape = (-1,1)
         y.shape = (-1,1)
         sources = np.hstack((x,y))
         sources = np.around(sources)
-        h = np.random.random() + 0.5
+        #h = np.random.random() + 0.5
         dat4,obj4 = generer_data(m,n,sources,h,nb_data,k==9)
         dat4 = np.append(dat5,dat4,axis=0)
         obj4 = np.append(obj5,obj4,axis=0) 
      
-        m = 500
-        n = 500    
-        sources = ((20,77), (189,401), (257,200), (287, 455))
-        h = np.random.random() + 0.5
-        nb_data = 100
+        m = 20
+        n = 20    
+        sources = ((0,0), (19,19), (19,0), (0, 19))
+        #h = np.random.random() + 0.5*
         dat3,obj3 = generer_data(m,n,sources,h,nb_data,k==9)
         dat3 = np.append(dat4,dat3,axis=0)
         obj3 = np.append(obj4,obj3,axis=0)  
         
-        m = 500
-        n = 500
-        sources = [[[i,j] for i in range(100)] for j in range(10)]
-        sources = np.reshape(sources,(100*10,2))
-        h = np.random.random() + 0.5
-        nb_data = 100
+        m = 20
+        n = 20
+        sources = [[[m-i,n-j] for i in range(10)] for j in range(5)]
+        sources = np.reshape(sources,(10*5,2))
+        #h = np.random.random() + 0.5
         dat2,obj2 = generer_data(m,n,sources,h,nb_data,k==9)
         dat2 = np.append(dat3,dat2,axis=0)
         obj2 = np.append(obj3,obj2,axis=0)  
         
-        m = 500
-        n = 500
+        m = 20
+        n = 20
         sources = lemniscate_like()
-        sources = np.around(sources)
-        h = np.random.random() + 0.5
-        nb_data = 100
+        sources = np.unique(np.around(sources),axis=0)
+        #h = np.random.random() + 0.5
         dat1,obj1 = generer_data(m,n,sources,h,nb_data,k==9)
         
         dat100 = np.append(dat2,dat1,axis=0)
@@ -198,9 +201,6 @@ if __name__ == "__main__":
         
         dat = np.append(dat,dat100,axis=0)
         obj = np.append(obj,obj100,axis=0)  
-    
-    #dat_scaled = copy.deepcopy(dat)
-    #dat_scaled[:,1:] = (dat[:,1:] - np.tile(np.array([dat[:,1:].min(axis=1)]).transpose(), (1, 12))) / (np.tile(np.array([dat[:,1:].max(axis=1)]).transpose(), (1, 12)) - np.tile(np.array([dat[:,1:].min(axis=1)]).transpose(), (1, 12)))
     
     np.save('patch.npy', dat)
     np.save('objectifs.npy',obj)

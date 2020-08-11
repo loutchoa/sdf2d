@@ -7,19 +7,7 @@
 #define MIN(a,b) ((a)>(b)?(b):(a))
 
 // Return the approximated distance of the point
-double deep_solver(std::vector<double> patch, char* path_model) {
-
-	std::string p(path_model);
-
-	torch::jit::script::Module local_solver;
-	try {
-		// Deserialize the ScriptModule from a file using torch::jit::load().
-		local_solver = torch::jit::load(p);
-	}
-	catch (const c10::Error& e) {
-		std::cout << e.msg() << std::endl;
-		std::cout << "error loading the model\n";
-	}
+double deep_solver(std::vector<double> patch, torch::jit::script::Module local_solver) {
 
     double distance, maxi, mini;
 
@@ -43,16 +31,13 @@ double deep_solver(std::vector<double> patch, char* path_model) {
 
 	std::vector<torch::jit::IValue> inputs;
 	inputs.push_back((torch::from_blob(x, { 1, 13 }, torch::kFloat64)).toType(at::kFloat));
-	std::cout << patch << std::endl;
-	std::cout << inputs << std::endl;
 
 	torch::Tensor output = local_solver.forward(inputs).toTensor();
-	std::cout << output << std::endl;
 	distance = output[0].item<double>();
-	std::cout << distance << std::endl;
 	distance = distance * (maxi - mini) + mini;
 	return distance;
-    
+	
+	// Local numeric solver
 	/*
     double t1 = MIN(patch[1],patch[2]);
     double t2 = MIN(patch[3],patch[4]);
@@ -81,7 +66,7 @@ void fmm2d(double* D, double* P, double* sources,double h, int m, int n, int sou
 	// All set to false
 	bool* visited = (bool*)mxCalloc(m * n, sizeof(bool));
 
-	double distance;
+	double distance, obj;
 
 	int x, y, ind, i, j, indNeigh, ip, jp;
 
@@ -93,7 +78,21 @@ void fmm2d(double* D, double* P, double* sources,double h, int m, int n, int sou
 	int jpatch[] = { 1,-1, 0, 0, -1, 1,-1, 1, 2,-2, 0, 0 };
 	std::vector<double> dist_patch;
     
+	// Creation of minHeap
 	minHeap wavefront = minHeap(m * n);
+
+
+	// Load the model
+	std::string p(path_model);
+	torch::jit::script::Module local_solver;
+	try {
+		// Deserialize the ScriptModule from a file using torch::jit::load().
+		local_solver = torch::jit::load(p);
+	}
+	catch (const c10::Error& e) {
+		std::cout << e.msg() << std::endl;
+		std::cout << "error loading the model\n";
+	}
 
 	// Initialization of distance matrix
 	for (int k = 0; k < m*n; k++) D[k] = HUGE_VAL;
@@ -131,20 +130,23 @@ void fmm2d(double* D, double* P, double* sources,double h, int m, int n, int sou
 				for (int p = 0; p < 12; p++) {
 					ip = i + ipatch[p];
 					jp = j + jpatch[p];
-					if ((ip >= 1) && (jp >= 1) && (ip <= m) && (jp <= n) && D[(ip - 1) + (jp - 1) * m] != HUGE_VAL) {
-						dist_patch.push_back(D[(ip - 1) + (jp - 1) * m]);
+
+					obj = HUGE_VAL;
+					for (unsigned s = 0; s < sources_nbr; s++) {
+						obj = MIN(sqrt(pow(i - sources[2 * s], 2) + pow(j - sources[2 * s + 1], 2)), obj);
+					}
+
+					if ((ip >= 1) && (jp >= 1) && (ip <= m) && (jp <= n) && (D[(ip - 1) + (jp - 1) * m] != HUGE_VAL) && (D[(ip - 1) + (jp - 1) * m] < obj)) {
+							dist_patch.push_back(D[(ip - 1) + (jp - 1) * m]);
 					}
 					else {
 						// distance for HUGE_VAL points = ground truth distance + 2step
-						distance = HUGE_VAL;
-						for (unsigned s = 0; s < sources_nbr; s++) {
-							distance = MIN(sqrt(pow(i - sources[2 * s], 2) + pow(j - sources[2 * s + 1], 2))+2*h, distance);
-						}
-						dist_patch.push_back(distance);
+						dist_patch.push_back(obj+2*h);
                     }
+					
 				}
 
-				distance = deep_solver(dist_patch, path_model);
+				distance = deep_solver(dist_patch, local_solver);
 
 				if (wavefront.isInHeap(indNeigh)) {
 					if (distance < D[indNeigh]) {

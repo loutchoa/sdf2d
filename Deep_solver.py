@@ -39,7 +39,12 @@ class Net(nn.Module):
         self.fc1 = nn.Linear(128, 256)
         self.fc2 = nn.Linear(256,128)
         self.fc3 = nn.Linear(128,1)
-        
+        '''
+        self.fc2 = nn.Linear(256,512)
+        self.fc3 = nn.Linear(512,256)
+        self.fc4 = nn.Linear(256,128)
+        self.fc5 = nn.Linear(128,1)
+        '''
     def forward(self, x):
         
         z = self.fc0(x)
@@ -50,7 +55,11 @@ class Net(nn.Module):
         z = F.relu(z)
         z = self.fc3(z)
         z = F.relu(z)
-        
+        '''z = self.fc4(z)
+        z = F.relu(z)
+        z = self.fc5(z)
+        z = F.relu(z)
+        '''
         return z
 
 
@@ -186,7 +195,8 @@ def train_model(model, dataloaders, criterion, optimizer, num_epochs):
     model.load_state_dict(best_model_wts)
     return model, val_acc_history
 
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+#device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+device = torch.device("cpu")
 print(device)
 
 net = Net()
@@ -199,7 +209,7 @@ critere = nn.MSELoss()
 
 # Choisir pour optimiseur le modèle de descente de gradient stochastique
 # L'optimiseur gère l'hyperparamètre de taux d'apprentissage "lr" (learning rate) et celui de memoire
-opti = optim.SGD(net.parameters(), lr=0.01, momentum=0.90)
+opti = optim.SGD(net.parameters(), lr=0.05, momentum=0.90)
 
 
 # N is batch size; D_in is input dimension;D_out is output dimension.
@@ -266,9 +276,9 @@ input = input.to(device)
 # We normalize inputs
 max_input = inputs[1:].max()
 min_input = inputs[1:].min()
-input[1:] = input[1:] - min_input
+inputs = inputs - min_input
 
-input = input/(max_input - min_input)
+inputs = inputs/(max_input - min_input)
 
 predit = local_solver(inputs)
 

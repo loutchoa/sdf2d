@@ -4,11 +4,11 @@
 %                                                                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-close all;
-%clear;
+D4 = deep_eikonal_solver_matlab(20,4,1);
+D8 = deep_eikonal_solver_matlab(20,8,1);
 
-% Dimension de l'espace
-n = 50;
+
+function D = deep_eikonal_solver_matlab(n,nbvoisins,verbose)
 
 % L'utilisateur choisit le nbre de points de départ
 nb_points = 0;
@@ -18,7 +18,7 @@ end
 
 % Affichage de la carte de potentiel
 P = matrice_poids('constant', n);
-figure(2);
+figure();
 imagesc(P); axis image; axis off;colormap gray(256);
 
 % Choix point de départ
@@ -28,16 +28,22 @@ ind_s = [];
 while points < nb_points
     hold on;
     nouveau = round(ginput(1));
-    % ind_s = [2, 15]; % pour la position du rapport en mode binaire
-    ind_s = [ind_s; nouveau(2), nouveau(1)];
+    ind_s = [ind_s; n+1-nouveau(2), nouveau(1)];
     plot( nouveau(1), nouveau(2), 'rx' );
     points = points + 1;
 end
 hold off;
+
+close
 %% Initialisation algorithme
 
-% Gère l'affichage
-verbose = 1;
+% Gère l'affichage (bien plus lent si affichage !)
+x = 1:n;
+[X,Y] = meshgrid(x,x);
+pts_x = X(ind_s(:,1),ind_s(:,2));
+pts_x = pts_x(1,:);
+pts_y = Y(ind_s(:,1),ind_s(:,2));
+pts_y = pts_y(:,1);
 
 % Les trois états possibles d'un point
 visited = -1;
@@ -54,7 +60,7 @@ S = ones(n);
 S(sub2ind(size(P), ind_s(:,1), ind_s(:,2))) = visited;
 
 % WaveFront
-WV = MinHeap(min(n^2,2^48));
+WV = MinHeap(min(n^2+1,2^48));
 
 % Newly visited points
 NVP = ind_s;
@@ -65,9 +71,10 @@ if verbose
 end
 
 sommets_visites = size(ind_s,1);
-nb_iter_max = n^2+1; 
-nbvoisins = 8;
+nb_iter_max = n^2-nb_points; 
 iter = 0;
+
+figure();
 while (iter<nb_iter_max) && (sommets_visites ~= n^2)
     iter = iter + 1;
     
@@ -115,31 +122,41 @@ while (iter<nb_iter_max) && (sommets_visites ~= n^2)
     NVP = [i j];
     
     if verbose
-        waitbar(iter/nb_iter_max, b, sprintf('Performing Fast Marching algorithm, iteration %d.', iter) );
+        waitbar(iter/nb_iter_max, b, sprintf('Performing Fast Marching algorithm %d %%.', round(100*iter/nb_iter_max)) );
     end
+    
+    subplot(1,2,1)
+    imagesc(flip(D,1)); axis image; axis off;
+    hold on;
+    plot( pts_x, n+1-pts_y, 'rx' );
+    hold off;
+    
+    subplot(1,2,2)
+    imagesc(flip(S,1)); axis image; axis off; colormap gray(256);
+    hold on;
+    plot( pts_x, n+1-pts_y, 'rx' );
+    hold off; 
 end
-figure(3);
-subplot(1,2,1)
-imagesc(D); axis image; axis off;%colormap default;
-hold on;
-plot( ind_s(:,2), ind_s(:,1), 'rx' );
-hold off;
 
-subplot(1,2,2)
-imagesc(S); axis image; axis off;colormap gray(256);
-hold on;
-plot( ind_s(:,2), ind_s(:,1), 'rx' );
-hold off;
+if ~verbose
+    subplot(1,2,1)
+    imagesc(flip(D,1)); axis image; axis off;
+    hold on;
+    plot( pts_x, n+1-pts_y, 'rx' );
+    hold off;
+    
+    subplot(1,2,2)
+    imagesc(flip(S,1)); axis image; axis off; colormap gray(256);
+    hold on;
+    plot( pts_x, n+1-pts_y, 'rx' );
+    hold off; 
+end
 
-figure(4);
-x = 0:1/(n-1):1;
-[X,Y] = meshgrid(x,x);
-contourf(X,1-Y,D,15);
+figure();
+
+contourf(X,Y,D,15);
 hold on;
-pts_x = X(ind_s(:,1),ind_s(:,2));
-pts_x = pts_x(1,:);
-pts_y = Y(ind_s(:,1),ind_s(:,2));
-pts_y = pts_y(:,1);
-plot( pts_x, 1-pts_y, 'rx' );
+plot( pts_x, pts_y, 'rx' );
 hold off;
-daspect([1 1 1]);
+daspect([n n 1]);
+end

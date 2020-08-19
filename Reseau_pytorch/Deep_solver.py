@@ -39,12 +39,7 @@ class Net(nn.Module):
         self.fc1 = nn.Linear(128, 256)
         self.fc2 = nn.Linear(256,128)
         self.fc3 = nn.Linear(128,1)
-        '''
-        self.fc2 = nn.Linear(256,512)
-        self.fc3 = nn.Linear(512,256)
-        self.fc4 = nn.Linear(256,128)
-        self.fc5 = nn.Linear(128,1)
-        '''
+        
     def forward(self, x):
         
         z = self.fc0(x)
@@ -54,12 +49,6 @@ class Net(nn.Module):
         z = self.fc2(z)
         z = F.relu(z)
         z = self.fc3(z)
-        z = F.relu(z)
-        '''z = self.fc4(z)
-        z = F.relu(z)
-        z = self.fc5(z)
-        z = F.relu(z)
-        '''
         return z
 
 
@@ -210,7 +199,7 @@ critere = nn.MSELoss()
 # Choisir pour optimiseur le modèle de descente de gradient stochastique
 # L'optimiseur gère l'hyperparamètre de taux d'apprentissage "lr" (learning rate) et celui de memoire
 opti = optim.SGD(net.parameters(), lr=0.05, momentum=0.90)
-
+ 
 
 # N is batch size; D_in is input dimension;D_out is output dimension.
 N, D_in, D_out = 10000, 13, 1
@@ -218,13 +207,10 @@ N, D_in, D_out = 10000, 13, 1
 # Besoin de creer la base de donnees pour tester et mettre à jour le code
 # Donnees d'entrees
 X = torch.from_numpy(np.load('patch.npy')).float()
-#X = torch.randn(N,D_in)
 
 
 # Donnees objectifs
 Y = torch.from_numpy(np.load('objectifs.npy')).float()
-#Y = Y.reshape(N,D_out)
-#Y = torch.randn(N)
 
 # Mélanger les données
 s= np.arange(X.shape[0])

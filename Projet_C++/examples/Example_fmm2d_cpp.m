@@ -6,7 +6,7 @@ n = 100;
 path_solver = 'C:\Users\yohan\Desktop\Cours\2A\Stage\ProjetYohan\Projet_C++\local_solver.pt';
 
 % [x0 y0 x1 y1 ... x y]
-sources = [ 30 40 70 60];
+sources = [ 30 50 70 50];
 
 step = 1; % model isn't trained for other steps for now
 

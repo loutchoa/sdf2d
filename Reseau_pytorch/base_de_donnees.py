@@ -106,14 +106,14 @@ if __name__ == "__main__":
         n = 20 
         sources = [[m-j,j] for j in np.linspace(1,19,19)]
         sources = np.reshape(sources,(19,2))
-        #h = np.random.random() + 0.5
+        # h = np.random.random() + 1
         dat10,obj10 = generer_data(m,n,sources,h,nb_data,k==9)
         
         m = 20
         n = 20
         sources = [[j,j] for j in np.linspace(0,18,19)]
         sources = np.reshape(sources,(19,2))
-        #h = np.random.random() + 0.5
+        # h = np.random.random() + 1
         dat9,obj9 = generer_data(m,n,sources,h,nb_data,k==9)
         dat9 = np.append(dat10,dat9,axis=0)
         obj9 = np.append(obj10,obj9,axis=0) 
@@ -122,7 +122,7 @@ if __name__ == "__main__":
         n = 20 
         sources = [[j,10] for j in np.linspace(1,19,19)]
         sources = np.reshape(sources,(19,2))
-        #h = np.random.random() + 0.5
+        # h = np.random.random() + 1
         dat8,obj8 = generer_data(m,n,sources,h,nb_data,k==9)
         dat8 = np.append(dat9,dat8,axis=0)
         obj8 = np.append(obj9,obj8,axis=0) 
@@ -135,7 +135,7 @@ if __name__ == "__main__":
                 while np.sum(np.equal(sources, pts).all(axis=1))>1 : 
                     pts = np.random.randint(0,min(m,n),(1,2),dtype=int)
                 sources[i] = pts
-        #h = np.random.random() + 0.5
+        # h = np.random.random() + 1
         dat7,obj7 = generer_data(m,n,sources,h,nb_data,k==9)
         dat7 = np.append(dat8,dat7,axis=0)
         obj7 = np.append(obj8,obj7,axis=0) 
@@ -144,7 +144,7 @@ if __name__ == "__main__":
         n = 20    
         sources = [[[i,j] for i in range(3)] for j in range(20)]
         sources = np.reshape(sources,(60,2))
-        #h = np.random.random() + 0.5
+        # h = np.random.random() + 1
         dat6,obj6 = generer_data(m,n,sources,h,nb_data,k==9)
         dat6 = np.append(dat7,dat6,axis=0)
         obj6 = np.append(obj7,obj6,axis=0) 
@@ -153,7 +153,7 @@ if __name__ == "__main__":
         n = 20
         sources = [[10,j] for j in np.linspace(1,19,19)]
         sources = np.reshape(sources,(19,2))
-        #h = np.random.random() + 0.5
+        # h = np.random.random() + 1
         dat5,obj5 = generer_data(m,n,sources,h,nb_data,k==9)
         dat5 = np.append(dat6,dat5,axis=0)
         obj5 = np.append(obj6,obj5,axis=0) 
@@ -167,7 +167,7 @@ if __name__ == "__main__":
         y.shape = (-1,1)
         sources = np.hstack((x,y))
         sources = np.around(sources)
-        #h = np.random.random() + 0.5
+        # h = np.random.random() + 1
         dat4,obj4 = generer_data(m,n,sources,h,nb_data,k==9)
         dat4 = np.append(dat5,dat4,axis=0)
         obj4 = np.append(obj5,obj4,axis=0) 
@@ -175,7 +175,7 @@ if __name__ == "__main__":
         m = 20
         n = 20    
         sources = ((0,0), (19,19), (19,0), (0, 19))
-        #h = np.random.random() + 0.5*
+        # h = np.random.random() + 1
         dat3,obj3 = generer_data(m,n,sources,h,nb_data,k==9)
         dat3 = np.append(dat4,dat3,axis=0)
         obj3 = np.append(obj4,obj3,axis=0)  
@@ -184,7 +184,7 @@ if __name__ == "__main__":
         n = 20
         sources = [[[m-i,n-j] for i in range(10)] for j in range(5)]
         sources = np.reshape(sources,(10*5,2))
-        #h = np.random.random() + 0.5
+        # h = np.random.random() + 1
         dat2,obj2 = generer_data(m,n,sources,h,nb_data,k==9)
         dat2 = np.append(dat3,dat2,axis=0)
         obj2 = np.append(obj3,obj2,axis=0)  
@@ -193,7 +193,7 @@ if __name__ == "__main__":
         n = 20
         sources = lemniscate_like()
         sources = np.unique(np.around(sources),axis=0)
-        #h = np.random.random() + 0.5
+        # h = np.random.random() + 1
         dat1,obj1 = generer_data(m,n,sources,h,nb_data,k==9)
         
         dat100 = np.append(dat2,dat1,axis=0)

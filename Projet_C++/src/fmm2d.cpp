@@ -133,7 +133,7 @@ void fmm2d(double* D, double* P, double* sources,double h, int m, int n, int sou
 
 					obj = HUGE_VAL;
 					for (unsigned s = 0; s < sources_nbr; s++) {
-						obj = MIN(sqrt(pow(i - sources[2 * s], 2) + pow(j - sources[2 * s + 1], 2)), obj);
+						obj = MIN(sqrt(pow(h*(i - sources[2 * s]), 2) + pow(h*(j - sources[2 * s + 1]), 2)), obj);
 					}
 
 					if ((ip >= 1) && (jp >= 1) && (ip <= m) && (jp <= n) && (D[(ip - 1) + (jp - 1) * m] != HUGE_VAL) && (D[(ip - 1) + (jp - 1) * m] < obj)) {

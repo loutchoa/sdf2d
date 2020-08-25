@@ -1,4 +1,4 @@
-function D = Local_Numerical_Solver(A,D,P,nbvoisins)
+function D = Local_Numerical_Solver(A,D,P,nbvoisins,h)
 %   Approximation locale du gradient
 %
 %   D = Local_Numerical_Solver(A,D,P)
@@ -6,12 +6,10 @@ function D = Local_Numerical_Solver(A,D,P,nbvoisins)
 %   'A' la liste des points dont on doit calculer la distance
 %   'D' la matrice des distances
 %   'P' la matrice des poids
+%   'h' pas de discréstisation
 
 % Dimension de l'espace
 n = length(D);
-
-% Pas de discrétisation 
-h = 1;
 
 for p = 1:size(A,1)
     i = A(p,1);

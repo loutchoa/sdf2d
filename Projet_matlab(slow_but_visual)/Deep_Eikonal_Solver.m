@@ -3,12 +3,7 @@
 %                         Deep Eikonal Solver                             %
 %                                                                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-D4 = deep_eikonal_solver_matlab(20,4,1);
-D8 = deep_eikonal_solver_matlab(20,8,1);
-
-
-function D = deep_eikonal_solver_matlab(n,nbvoisins,verbose)
+function D = Deep_Eikonal_Solver(n,nbvoisins,h,verbose)
 
 % L'utilisateur choisit le nbre de points de départ
 nb_points = 0;
@@ -28,11 +23,13 @@ ind_s = [];
 while points < nb_points
     hold on;
     nouveau = round(ginput(1));
-    ind_s = [ind_s; n+1-nouveau(2), nouveau(1)];
+    ind_s = [ind_s; n+1-nouveau(2), nouveau(1)]
     plot( nouveau(1), nouveau(2), 'rx' );
     points = points + 1;
 end
 hold off;
+
+ind_s = [ 15 25 ; 40 25];
 
 close
 %% Initialisation algorithme
@@ -87,7 +84,7 @@ while (iter<nb_iter_max) && (sommets_visites ~= n^2)
     A = reshape(A,length(A)/2,2);
     
     % "Estimate u(p) for p in A based on visited points"
-    D = Local_Numerical_Solver(A,D,P,nbvoisins);
+    D = Local_Numerical_Solver(A,D,P,nbvoisins,h);
     
     % "Tag each p in A as wavefront"
     for i=1:size(A,1)

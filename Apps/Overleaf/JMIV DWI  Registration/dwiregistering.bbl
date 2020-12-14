@@ -1,0 +1,210 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{DOI~\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{DOI~\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem{AbramowitzStegun1974}
+Abramowitz, M., Stegun, I.: Handbook of Mathematical Functions, With Formulas,
+  Graphs, and Mathematical Tables,.
+\newblock Dover (1974)
+
+\bibitem{avants2009advanced}
+Avants, B.B., Tustison, N., Song, G.: Advanced normalization tools (ants).
+\newblock Insight j \textbf{2}, 1--35 (2009)
+
+\bibitem{darknersporring2011ipmi}
+Darkner, S., Sporring, J.: Generalized partial volume: An inferior density
+  estimator to parzen windows for normalized mutual information.
+\newblock In: IPMI, \emph{LNCS}, vol. 6801, pp. 436--447. Springer (2011)
+
+\bibitem{darkner2013locally}
+Darkner, S., Sporring, J.: Locally orderless registration.
+\newblock IEEE transactions on pattern analysis and machine intelligence
+  \textbf{35}(6), 1437--1450 (2013)
+
+\bibitem{darknersporring2012pami}
+Darkner, S., Sporring, J.: {Locally Orderless Registration}.
+\newblock IEEE Transactions on Pattern Analysis and Machine Intelligence
+  \textbf{35}(6), 1437--1450 (2013)
+
+\bibitem{descoteaux2007regularized}
+Descoteaux, M., Angelino, E., Fitzgibbons, S., Deriche, R.: Regularized, fast,
+  and robust analytical q-ball imaging.
+\newblock Magnetic resonance in medicine \textbf{58}(3), 497--510 (2007)
+
+\bibitem{garyfallidis2014dipy}
+Garyfallidis, E., Brett, M., Amirbekian, B., Rokem, A., Van Der~Walt, S.,
+  Descoteaux, M., Nimmo-Smith, I.: Dipy, a library for the analysis of
+  diffusion mri data.
+\newblock Frontiers in neuroinformatics \textbf{8}, 8 (2014)
+
+\bibitem{helmholz1858}
+Helmholtz, H.: Uber integrale der hydrodynamischen gleichungen, welcher der
+  wirbelbewegungen entsprechen" (on integrals of the hydrodynamic equations
+  which correspond to vortex motions).
+\newblock Journal für die reine und angewandte Mathematik \textbf{55}(8),
+  25--55 (1858)
+
+\bibitem{hermosillo2002variational}
+Hermosillo, G., Chefd'Hotel, C., Faugeras, O.: {Variational methods for
+  multimodal image matching}.
+\newblock International Journal of Computer Vision \textbf{50}(3), 329--343
+  (2002)
+
+\bibitem{irfanoglu2016dr}
+Irfanoglu, M.O., Nayak, A., Jenkins, J., Hutchinson, E.B., Sadeghi, N., Thomas,
+  C.P., Pierpaoli, C.: Dr-tamas: Diffeomorphic registration for tensor accurate
+  alignment of anatomical structures.
+\newblock NeuroImage \textbf{132}, 439--454 (2016)
+
+\bibitem{jenkinson2012fsl}
+Jenkinson, M., Beckmann, C.F., Behrens, T.E., Woolrich, M.W., Smith, S.M.: Fsl.
+\newblock Neuroimage \textbf{62}(2), 782--790 (2012)
+
+\bibitem{jensen2015locally}
+Jensen, H.G., Lauze, F., Nielsen, M., Darkner, S.: Locally orderless
+  registration for diffusion weighted images.
+\newblock In: International Conference on Medical Image Computing and
+  Computer-Assisted Intervention, pp. 305--312. Springer (2015)
+
+\bibitem{johansen2013diffusion}
+Johansen-Berg, H., Behrens, T.E.: Diffusion MRI: from quantitative measurement
+  to in vivo neuroanatomy.
+\newblock Academic Press (2013)
+
+\bibitem{jupp1989unified}
+Jupp, P., Mardia, K.: A unified view of the theory of directional statistics,
+  1975-1988.
+\newblock International Statistical Review/Revue Internationale de Statistique
+  pp. 261--294 (1989)
+
+\bibitem{klein2010elastix}
+Klein, S., Staring, M., Murphy, K., Viergever, M.A., Pluim, J.P.: Elastix: a
+  toolbox for intensity-based medical image registration.
+\newblock IEEE transactions on medical imaging \textbf{29}(1), 196--205 (2010)
+
+\bibitem{koenderink1999structure}
+Koenderink, J.J., Van~Doorn, A.J.: The structure of locally orderless images.
+\newblock International Journal of Computer Vision \textbf{31}(2), 159--168
+  (1999)
+
+\bibitem{o2017advances}
+O'Donnell, L.J., Daducci, A., Wassermann, D., Lenglet, C.: Advances in
+  computational and statistical diffusion mri.
+\newblock NMR in Biomedicine  (2017)
+
+\bibitem{riyahi2014regularization}
+Riyahi-Alam, S., Peroni, M., Baroni, G., Riboldi, M.: Regularization in
+  deformable registration of biomedical images based on divergence and curl
+  operators.
+\newblock Methods of information in medicine \textbf{53}(01), 21--28 (2014)
+
+\bibitem{rueckert2006diffeomorphic}
+Rueckert, D., Aljabar, P., Heckemann, R.A., Hajnal, J.V., Hammers, A.:
+  Diffeomorphic registration using b-splines.
+\newblock In: International Conference on Medical Image Computing and
+  Computer-Assisted Intervention, pp. 702--709. Springer (2006)
+
+\bibitem{rueckert1999nonrigid}
+Rueckert, D., Sonoda, L.I., Hayes, C., Hill, D.L., Leach, M.O., Hawkes, D.J.:
+  Nonrigid registration using free-form deformations: application to breast mr
+  images.
+\newblock IEEE transactions on medical imaging \textbf{18}(8), 712--721 (1999)
+
+\bibitem{schmidt2005minfunc}
+Schmidt, M.: minfunc: unconstrained differentiable multivariate optimization in
+  matlab.
+\newblock Software available at
+  https://www.cs.ubc.ca/~schmidtm/Software/minFunc.html  (2005)
+
+\bibitem{semechko2012suite}
+Semechko, A.: Suite of functions to perform uniform sampling of a sphere.
+\newblock Software available at
+  https://www.mathworks.com/matlabcentral/fileexchange/37004-suite-of-functions-to-perform-uniform-sampling-of-a-sphere,
+  accessed 2017.  (2012)
+
+\bibitem{sporring2011jacobians}
+Sporring, J., Darkner, S.: Jacobians for lebesgue registration for a range of
+  similarity measures.
+\newblock Department of Computer Science, University of Copenhagen, Tech. Rep
+  \textbf{4} (2011)
+
+\bibitem{studholme1999overlap}
+Studholme, C., Hill, D.L., Hawkes, D.J.: An overlap invariant entropy measure
+  of 3d medical image alignment.
+\newblock Pattern recognition \textbf{32}(1), 71--86 (1999)
+
+\bibitem{tao2006method}
+Tao, X., Miller, J.V.: A method for registering diffusion weighted magnetic
+  resonance images.
+\newblock In: Medical Image Computing and Computer-Assisted
+  Intervention--MICCAI 2006, pp. 594--602. Springer (2006)
+
+\bibitem{tournier2012mrtrix}
+Tournier, J., Calamante, F., Connelly, A., et~al.: Mrtrix: diffusion
+  tractography in crossing fiber regions.
+\newblock International Journal of Imaging Systems and Technology
+  \textbf{22}(1), 53--66 (2012)
+
+\bibitem{treiber2016characterization}
+Treiber, J.M., White, N.S., Steed, T.C., Bartsch, H., Holland, D., Farid, N.,
+  McDonald, C.R., Carter, B.S., Dale, A.M., Chen, C.C.: Characterization and
+  correction of geometric distortions in 814 diffusion weighted images.
+\newblock PloS one \textbf{11}(3), e0152472 (2016)
+
+\bibitem{van2013wu}
+Van~Essen, D.C., Smith, S.M., Barch, D.M., Behrens, T.E., Yacoub, E., Ugurbil,
+  K., Consortium, W.M.H., et~al.: The wu-minn human connectome project: an
+  overview.
+\newblock Neuroimage \textbf{80}, 62--79 (2013)
+
+\bibitem{van2007nonrigid}
+Van~Hecke, W., Leemans, A., D'Agostino, E., De~Backer, S., Vandervliet, E.,
+  Parizel, P.M., Sijbers, J.: Nonrigid coregistration of diffusion tensor
+  images using a viscous fluid model and mutual information.
+\newblock IEEE transactions on medical imaging \textbf{26}(11), 1598--1612
+  (2007)
+
+\bibitem{wang2011dti}
+Wang, Y., Gupta, A., Liu, Z., Zhang, H., Escolar, M.L., Gilmore, J.H.,
+  Gouttard, S., Fillard, P., Maltbie, E., Gerig, G., et~al.: Dti registration
+  in atlas based fiber analysis of infantile krabbe disease.
+\newblock Neuroimage \textbf{55}(4), 1577--1586 (2011)
+
+\bibitem{wang2017evaluations}
+Wang, Y., Shen, Y., Liu, D., Li, G., Guo, Z., Fan, Y., Niu, Y.: Evaluations of
+  diffusion tensor image registration based on fiber tractography.
+\newblock Biomedical engineering online \textbf{16}(1), 9 (2017)
+
+\bibitem{wang2016evaluation}
+Wang, Y., Yu, Q., Liu, Z., Lei, T., Guo, Z., Qi, M., Fan, Y.: Evaluation on
+  diffusion tensor image registration algorithms.
+\newblock Multimedia Tools and Applications \textbf{75}(13), 8105--8122 (2016)
+
+\bibitem{wells1996mmv}
+Wells, W., Viola, P., Atsumi, H., Nakajima, S., Kikinis, R.: {Multi-modal
+  volume registration by maximization of mutual information}.
+\newblock Medical Image Analysis \textbf{1}(1), 35--51 (1996)
+
+\bibitem{yeo2009dt}
+Yeo, B.T., Vercauteren, T., Fillard, P., Peyrat, J.M., Pennec, X., Golland, P.,
+  Ayache, N., Clatz, O.: Dt-refind: Diffusion tensor registration with exact
+  finite-strain differential.
+\newblock IEEE transactions on medical imaging \textbf{28}(12), 1914--1928
+  (2009)
+
+\bibitem{zhang2006deformable}
+Zhang, H., Yushkevich, P.A., Alexander, D.C., Gee, J.C.: Deformable
+  registration of diffusion tensor mr images with explicit orientation
+  optimization.
+\newblock Medical image analysis \textbf{10}(5), 764--785 (2006)
+
+\bibitem{zhang2014large}
+Zhang, P., Niethammer, M., Shen, D., Yap, P.T.: Large deformation diffeomorphic
+  registration of diffusion-weighted imaging data.
+\newblock Medical image analysis \textbf{18}(8), 1290--1298 (2014)
+
+\end{thebibliography}

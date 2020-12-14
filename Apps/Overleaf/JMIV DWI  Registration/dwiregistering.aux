@@ -1,0 +1,407 @@
+\relax 
+\citation{johansen2013diffusion}
+\citation{jensen2015locally}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}}
+\citation{van2013wu}
+\citation{o2017advances}
+\citation{avants2009advanced,tournier2012mrtrix,jenkinson2012fsl, fischl2012freesurfer}
+\citation{zhang2006deformable}
+\citation{yeo2009dt}
+\citation{irfanoglu2016dr}
+\citation{wang2011dti,zhang2014large,wang2016evaluation,wang2017evaluations}
+\citation{yeo2009dt}
+\citation{wells1996mmv,wang2017evaluations}
+\citation{zhang2006deformable}
+\citation{yeo2009dt}
+\citation{jensen2015locally}
+\citation{darkner2013locally}
+\citation{jensen2015locally}
+\citation{johansen2013diffusion}
+\citation{van2007nonrigid}
+\citation{treiber2016characterization}
+\citation{studholme1999overlap}
+\citation{sporring2011jacobians,darknersporring2012pami}
+\citation{koenderink1999structure}
+\citation{hermosillo2002variational}
+\citation{darknersporring2011ipmi,darknersporring2012pami}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Locally Orderless DWI}{2}}
+\newlabel{sec:lor_dwi}{{3}{2}}
+\newlabel{sec:lor_dwi@cref}{{[section][3][]3}{[1][2][]2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Notations}{2}}
+\citation{darknersporring2012pami}
+\citation{jensen2015locally}
+\citation{tao2006method}
+\citation{jupp1989unified}
+\citation{AbramowitzStegun1974}
+\citation{jupp1989unified}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Recall on the LOR Framework}{3}}
+\newlabel{eq:loih}{{3.1}{3}}
+\newlabel{eq:loih@cref}{{[equation][1][3]3.1}{[1][3][]3}}
+\newlabel{eq:loipdf}{{3.2}{3}}
+\newlabel{eq:loipdf@cref}{{[equation][2][3]3.2}{[1][3][]3}}
+\newlabel{eq:sim}{{3.3}{3}}
+\newlabel{eq:sim@cref}{{[equation][3][3]3.3}{[1][3][]3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}The LOR-DWI framework}{3}}
+\newlabel{eq:vecfieldsmooth}{{3.5}{3}}
+\newlabel{eq:vecfieldsmooth@cref}{{[equation][5][3]3.5}{[1][3][]3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Action on Orientation}{3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Density, orientation and transformation}{3}}
+\citation{jensen2015locally}
+\citation{rueckert1999nonrigid}
+\citation{}
+\citation{schmidt2005minfunc}
+\citation{rueckert1999nonrigid,darknersporring2012pami,jensen2015locally}
+\newlabel{eq:densityreg}{{3.9}{4}}
+\newlabel{eq:densityreg@cref}{{[equation][9][3]3.9}{[1][3][]4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}LOR-DWI and Free Form Deformation}{4}}
+\newlabel{eq:argmax}{{3.10}{4}}
+\newlabel{eq:argmax@cref}{{[equation][10][3]3.10}{[1][4][]4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Estimation and optimization of similarity}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Dependency graph of the nonrigid DWI registration between the moving image $\bm  {I}$ and the target image $\bm  {J}$, with normalized mutual information (NMI) as the similarity measure. The deformation is parameterized by $\bm  {c}$ so that any change in $\bm  {c}$ will eventually affect the total similarity between the two images. The red frame contains MI registration elements which are classical, while the blue frame contains the part which extends the LOR framework to the LOR-DWI.}}{4}}
+\newlabel{fig:dependcygraph}{{1}{4}}
+\newlabel{fig:dependcygraph@cref}{{[figure][1][]1}{[1][4][]4}}
+\newlabel{eq:discreteWatson}{{3.12}{4}}
+\newlabel{eq:discreteWatson@cref}{{[equation][12][3]3.12}{[1][4][]4}}
+\newlabel{eq:sddirs}{{3.13}{4}}
+\newlabel{eq:sddirs@cref}{{[equation][13][3]3.13}{[1][4][]4}}
+\citation{garyfallidis2014dipy}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Regularization}{5}}
+\newlabel{eq:regularizer}{{3.21}{5}}
+\newlabel{eq:regularizer@cref}{{[equation][21][3]3.21}{[1][5][]5}}
+\newlabel{eq:reggradient}{{3.23}{5}}
+\newlabel{eq:reggradient@cref}{{[equation][23][3]3.23}{[1][5][]5}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Experiments}{5}}
+\citation{semechko2012suite}
+\citation{descoteaux2007regularized}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Simulated Examples}{6}}
+\newlabel{sec:artitest}{{4.1}{6}}
+\newlabel{sec:artitest@cref}{{[subsection][1][4]4.1}{[1][5][]6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}Simulating DWI data}{6}}
+\newlabel{subfig:disc}{{2a}{6}}
+\newlabel{sub@subfig:disc}{{(a)}{a}}
+\newlabel{subfig:disc@cref}{{[subfigure][1][2]2a}{[1][6][]6}}
+\newlabel{subfig:line}{{2b}{6}}
+\newlabel{sub@subfig:line}{{(b)}{b}}
+\newlabel{subfig:line@cref}{{[subfigure][2][2]2b}{[1][6][]6}}
+\newlabel{subfig:blob}{{2c}{6}}
+\newlabel{sub@subfig:blob}{{(c)}{c}}
+\newlabel{subfig:blob@cref}{{[subfigure][3][2]2c}{[1][6][]6}}
+\newlabel{subfig:cross}{{2d}{6}}
+\newlabel{sub@subfig:cross}{{(d)}{d}}
+\newlabel{subfig:cross@cref}{{[subfigure][4][2]2d}{[1][6][]6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Simulated DWI samples. The left column shows the raw DWI signal. The right column shows the reconstructed diffusion ODFs that follow anisotropic diffusion. The red lines indicate fiber orientations.}}{6}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {HARDI sample}}}{6}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {ODF of (a)}}}{6}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {HARDI sample}}}{6}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {ODF of (c)}}}{6}}
+\newlabel{fig:hardiandodf}{{2}{6}}
+\newlabel{fig:hardiandodf@cref}{{[figure][2][]2}{[1][6][]6}}
+\newlabel{subfig:crossnoise}{{3a}{6}}
+\newlabel{sub@subfig:crossnoise}{{(a)}{a}}
+\newlabel{subfig:crossnoise@cref}{{[subfigure][1][3]3a}{[1][6][]6}}
+\newlabel{subfig:crossnoiseFRT}{{3b}{6}}
+\newlabel{sub@subfig:crossnoiseFRT}{{(b)}{b}}
+\newlabel{subfig:crossnoiseFRT@cref}{{[subfigure][2][3]3b}{[1][6][]6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces A simulated DWI fiber tract crossing with uniform random noise.}}{6}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {HARDI fiber tract crossing}}}{6}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {ODFs of (a) showing the fibers}}}{6}}
+\newlabel{fig:crossingandnoise1}{{3}{6}}
+\newlabel{fig:crossingandnoise1@cref}{{[figure][3][]3}{[1][6][]6}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}Parametric Setup}{6}}
+\citation{darknersporring2012pami}
+\newlabel{subfig:crossscaled}{{4a}{7}}
+\newlabel{sub@subfig:crossscaled}{{(a)}{a}}
+\newlabel{subfig:crossscaled@cref}{{[subfigure][1][4]4a}{[1][6][]7}}
+\newlabel{subfig:crossscaledFRT}{{4b}{7}}
+\newlabel{sub@subfig:crossscaledFRT}{{(b)}{b}}
+\newlabel{subfig:crossscaledFRT@cref}{{[subfigure][2][4]4b}{[1][6][]7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Simulated DWI fiber tract crossing shown form above. The isotropic diffusion have now been normalized to have a lower mean diffusivity.}}{7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {HARDI fiber tract crossing}}}{7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {ODFs of (a) showing the fibers}}}{7}}
+\newlabel{fig:crossingandnoise3}{{4}{7}}
+\newlabel{fig:crossingandnoise3@cref}{{[figure][4][]4}{[1][6][]7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Experiment 1: Single Fiber Tracts}{7}}
+\newlabel{subsec:singlefiber}{{4.2}{7}}
+\newlabel{subsec:singlefiber@cref}{{[subsection][2][4]4.2}{[1][7][]7}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Straight and curved}{7}}
+\newlabel{subfig:straigt_l}{{5a}{7}}
+\newlabel{sub@subfig:straigt_l}{{(a)}{a}}
+\newlabel{subfig:straigt_l@cref}{{[subfigure][1][5]5a}{[1][7][]7}}
+\newlabel{subfig:wavy_l}{{5b}{7}}
+\newlabel{sub@subfig:wavy_l}{{(b)}{b}}
+\newlabel{subfig:wavy_l@cref}{{[subfigure][2][5]5b}{[1][7][]7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Experiment 1: Simulated fiber tract images with intersecting fibers at the boundaries. }}{7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Moving Image}}}{7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Target Image}}}{7}}
+\newlabel{fig:straight2wavy_l}{{5}{7}}
+\newlabel{fig:straight2wavy_l@cref}{{[figure][5][]5}{[1][7][]7}}
+\newlabel{subfig:straigt2wavy_deform}{{6a}{7}}
+\newlabel{sub@subfig:straigt2wavy_deform}{{(a)}{a}}
+\newlabel{subfig:straigt2wavy_deform@cref}{{[subfigure][1][6]6a}{[1][7][]7}}
+\newlabel{subfig:straigt2wavy_arrows}{{6b}{7}}
+\newlabel{sub@subfig:straigt2wavy_arrows}{{(b)}{b}}
+\newlabel{subfig:straigt2wavy_arrows@cref}{{[subfigure][2][6]6b}{[1][7][]7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Experiment 1: Registration of single tract images of varying shape and (given the boundary) length.}}{7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Reconstructed warped image}}}{7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Spatial mapping}}}{7}}
+\newlabel{fig:straight2wavy_l_results}{{6}{7}}
+\newlabel{fig:straight2wavy_l_results@cref}{{[figure][6][]6}{[1][7][]7}}
+\newlabel{subfig:straigt2wavy_deform_boundary}{{7a}{8}}
+\newlabel{sub@subfig:straigt2wavy_deform_boundary}{{(a)}{a}}
+\newlabel{subfig:straigt2wavy_deform_boundary@cref}{{[subfigure][1][7]7a}{[1][7][]8}}
+\newlabel{subfig:straigt2wavy_arrows_boundary}{{7b}{8}}
+\newlabel{sub@subfig:straigt2wavy_arrows_boundary}{{(b)}{b}}
+\newlabel{subfig:straigt2wavy_arrows_boundary@cref}{{[subfigure][2][7]7b}{[1][7][]8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Experiment 1: Registration of without boundary fibers. The spatial mapping indicates a nice preservation of length of the straight tract mapped to a subsection of the curved tract.}}{8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Reconstructed warped image}}}{8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Spatial mapping}}}{8}}
+\newlabel{fig:straight2wavy_l_boundary}{{7}{8}}
+\newlabel{fig:straight2wavy_l_boundary@cref}{{[figure][7][]7}{[1][7][]8}}
+\newlabel{subfig:straigt2wavy_deform_boundary_k0}{{8a}{8}}
+\newlabel{sub@subfig:straigt2wavy_deform_boundary_k0}{{(a)}{a}}
+\newlabel{subfig:straigt2wavy_deform_boundary_k0@cref}{{[subfigure][1][8]8a}{[1][7][]8}}
+\newlabel{subfig:straigt2wavy_arrows_boundary_k0}{{8b}{8}}
+\newlabel{sub@subfig:straigt2wavy_arrows_boundary_k0}{{(b)}{b}}
+\newlabel{subfig:straigt2wavy_arrows_boundary_k0@cref}{{[subfigure][2][8]8b}{[1][7][]8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Experiment 1: Scalar-based registration without boundary fibers and no directional directional information in the cost function during optimization.}}{8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Reconstructed warped image}}}{8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Spatial mapping}}}{8}}
+\newlabel{fig:straight2wavy_l_boundary_k0}{{8}{8}}
+\newlabel{fig:straight2wavy_l_boundary_k0@cref}{{[figure][8][]8}{[1][7][]8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Experiment 2: Crossing Fiber Tracts}{8}}
+\newlabel{subsec:crossingfiber}{{4.3}{8}}
+\newlabel{subsec:crossingfiber@cref}{{[subsection][3][4]4.3}{[1][8][]8}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}Straight and shifted}{8}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}Two degrees of shearing}{8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Experiment 3: Fanning Fiber Tracts}{8}}
+\newlabel{subsec:kissingfiber}{{4.4}{8}}
+\newlabel{subsec:kissingfiber@cref}{{[subsection][4][4]4.4}{[1][8][]8}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.1}Fanning and kissing fiber tracts in a crossing}{8}}
+\citation{van2013wu}
+\citation{helmholz1858}
+\citation{riyahi2014regularization}
+\citation{rueckert1999nonrigid}
+\citation{avants2009advanced}
+\citation{klein2010elastix}
+\citation{jenkinson2012fsl}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.2}Kissing fiber tracts}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Synthetic Deformations of Real Data}{9}}
+\newlabel{sec:syndeform}{{4.5}{9}}
+\newlabel{sec:syndeform@cref}{{[subsection][5][4]4.5}{[1][9][]9}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.1}DWI example data}{9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Selected region of interest for synthetic warp experiments (blue) overlaid on the $b_0$ image of HCP subject \texttt  {103818}.}}{9}}
+\newlabel{fig:cc_roi_b0}{{13}{9}}
+\newlabel{fig:cc_roi_b0@cref}{{[figure][13][]13}{[1][9][]9}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.2}The effects of the parameters}{9}}
+\citation{rueckert2006diffeomorphic}
+\newlabel{subfig:straight_x_2shift}{{9a}{10}}
+\newlabel{sub@subfig:straight_x_2shift}{{(a)}{a}}
+\newlabel{subfig:straight_x_2shift@cref}{{[subfigure][1][9]9a}{[1][9][]10}}
+\newlabel{subfig:straight_x_shifted}{{9b}{10}}
+\newlabel{sub@subfig:straight_x_shifted}{{(b)}{b}}
+\newlabel{subfig:straight_x_shifted@cref}{{[subfigure][2][9]9b}{[1][9][]10}}
+\newlabel{subfig:straigt2shift_deform}{{9c}{10}}
+\newlabel{sub@subfig:straigt2shift_deform}{{(c)}{c}}
+\newlabel{subfig:straigt2shift_deform@cref}{{[subfigure][3][9]9c}{[1][9][]10}}
+\newlabel{subfig:straigt2shift_arrows}{{9d}{10}}
+\newlabel{sub@subfig:straigt2shift_arrows}{{(d)}{d}}
+\newlabel{subfig:straigt2shift_arrows@cref}{{[subfigure][4][9]9d}{[1][9][]10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Experiment 2: Simulated crossing tracts (a) with a vertical shift (b). The registered result of the crossing under a both vertical and horizontal shift is reconstructed in (c), and shown with the final spatial mapping from the original position of the moving image in (d).}}{10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Moving Image}}}{10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Target Image}}}{10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Reconstructed warped image}}}{10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Spatial mapping}}}{10}}
+\newlabel{fig:straight2shift_x_results}{{9}{10}}
+\newlabel{fig:straight2shift_x_results@cref}{{[figure][9][]9}{[1][9][]10}}
+\newlabel{subfig:sheared30}{{10a}{10}}
+\newlabel{sub@subfig:sheared30}{{(a)}{a}}
+\newlabel{subfig:sheared30@cref}{{[subfigure][1][10]10a}{[1][9][]10}}
+\newlabel{subfig:sheared40}{{10b}{10}}
+\newlabel{sub@subfig:sheared40}{{(b)}{b}}
+\newlabel{subfig:sheared40@cref}{{[subfigure][2][10]10b}{[1][9][]10}}
+\newlabel{subfig:sheared_deform}{{10c}{10}}
+\newlabel{sub@subfig:sheared_deform}{{(c)}{c}}
+\newlabel{subfig:sheared_deform@cref}{{[subfigure][3][10]10c}{[1][9][]10}}
+\newlabel{subfig:sheared_arrows}{{10d}{10}}
+\newlabel{sub@subfig:sheared_arrows}{{(d)}{d}}
+\newlabel{subfig:sheared_arrows@cref}{{[subfigure][4][10]10d}{[1][9][]10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Experiment 2: Simulated crossing tracts with $\sim $30 degree (a) to 45 degree shearing (b). The reconstruction of the registered result is shown in (c), and the corresponding spatial mapping in (d).}}{10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Moving Image}}}{10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Target Image}}}{10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Reconstructed warped image}}}{10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Spatial mapping}}}{10}}
+\newlabel{fig:sheared2sheared_x_results}{{10}{10}}
+\newlabel{fig:sheared2sheared_x_results@cref}{{[figure][10][]10}{[1][9][]10}}
+\newlabel{subfig:fanning}{{11a}{10}}
+\newlabel{sub@subfig:fanning}{{(a)}{a}}
+\newlabel{subfig:fanning@cref}{{[subfigure][1][11]11a}{[1][9][]10}}
+\newlabel{subfig:kissing}{{11b}{10}}
+\newlabel{sub@subfig:kissing}{{(b)}{b}}
+\newlabel{subfig:kissing@cref}{{[subfigure][2][11]11b}{[1][9][]10}}
+\newlabel{subfig:fanning_deform}{{11c}{10}}
+\newlabel{sub@subfig:fanning_deform}{{(c)}{c}}
+\newlabel{subfig:fanning_deform@cref}{{[subfigure][3][11]11c}{[1][9][]10}}
+\newlabel{subfig:kissing_arrows}{{11d}{10}}
+\newlabel{sub@subfig:kissing_arrows}{{(d)}{d}}
+\newlabel{subfig:kissing_arrows@cref}{{[subfigure][4][11]11d}{[1][9][]10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Experiment 3: (a) Simulated fanned opening in the moving image, and (b) an interleaving curved target image. The reconstruction is shown in (c), and the spatial mapping in (d).}}{10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Moving Image}}}{10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Target Image}}}{10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Reconstructed warped image}}}{10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Spatial mapping}}}{10}}
+\newlabel{fig:fanning2kissing_x_results}{{11}{10}}
+\newlabel{fig:fanning2kissing_x_results@cref}{{[figure][11][]11}{[1][9][]10}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.3}Parametric Setup}{10}}
+\newlabel{subfig:straightlines}{{12a}{11}}
+\newlabel{sub@subfig:straightlines}{{(a)}{a}}
+\newlabel{subfig:straightlines@cref}{{[subfigure][1][12]12a}{[1][9][]11}}
+\newlabel{subfig:kissinglines}{{12b}{11}}
+\newlabel{sub@subfig:kissinglines}{{(b)}{b}}
+\newlabel{subfig:kissinglines@cref}{{[subfigure][2][12]12b}{[1][9][]11}}
+\newlabel{subfig:straight2kiss_deform}{{12c}{11}}
+\newlabel{sub@subfig:straight2kiss_deform}{{(c)}{c}}
+\newlabel{subfig:straight2kiss_deform@cref}{{[subfigure][3][12]12c}{[1][9][]11}}
+\newlabel{subfig:straight2kiss_arrows}{{12d}{11}}
+\newlabel{sub@subfig:straight2kiss_arrows}{{(d)}{d}}
+\newlabel{subfig:straight2kiss_arrows@cref}{{[subfigure][4][12]12d}{[1][9][]11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Experiment 3: Simulated straight (a) and kissing (b) fiber tracts. The reconstruction is shown in (c), and the spatial mapping in (d).}}{11}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Moving Image}}}{11}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Target Image}}}{11}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Reconstructed warped image}}}{11}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Spatial mapping}}}{11}}
+\newlabel{fig:straight2kiss_results}{{12}{11}}
+\newlabel{fig:straight2kiss_results@cref}{{[figure][12][]12}{[1][9][]11}}
+\newlabel{subfig:cc_slice}{{14a}{11}}
+\newlabel{sub@subfig:cc_slice}{{(a)}{a}}
+\newlabel{subfig:cc_slice@cref}{{[subfigure][1][14]14a}{[1][9][]11}}
+\newlabel{subfig:cc_deform}{{14b}{11}}
+\newlabel{sub@subfig:cc_deform}{{(b)}{b}}
+\newlabel{subfig:cc_deform@cref}{{[subfigure][2][14]14b}{[1][9][]11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Original central ROI slice with ODFs (a), and the deformation to be applied (b).}}{11}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Sagittal slice at ROI center.}}}{11}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Deformation field.}}}{11}}
+\newlabel{fig:cc_slice2}{{14}{11}}
+\newlabel{fig:cc_slice2@cref}{{[figure][14][]14}{[1][9][]11}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.4}The Quantitative Effect of Isoparametric Curves}{11}}
+\newlabel{subsec:isocurvesparam}{{4.5.4}{11}}
+\newlabel{subsec:isocurvesparam@cref}{{[subsubsection][4][4,5]4.5.4}{[1][11][]11}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.5}The Quantitative Effect of the Orientation Scale}{11}}
+\newlabel{subsec:orientationparam}{{4.5.5}{11}}
+\newlabel{subsec:orientationparam@cref}{{[subsubsection][5][4,5]4.5.5}{[1][11][]11}}
+\newlabel{subfig:binsmse}{{15a}{12}}
+\newlabel{sub@subfig:binsmse}{{(a)}{a}}
+\newlabel{subfig:binsmse@cref}{{[subfigure][1][15]15a}{[1][11][]12}}
+\newlabel{subfig:binscurl}{{15b}{12}}
+\newlabel{sub@subfig:binscurl}{{(b)}{b}}
+\newlabel{subfig:binscurl@cref}{{[subfigure][2][15]15b}{[1][11][]12}}
+\newlabel{subfig:binsdiv}{{15c}{12}}
+\newlabel{sub@subfig:binsdiv}{{(c)}{c}}
+\newlabel{subfig:binsdiv@cref}{{[subfigure][3][15]15c}{[1][11][]12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Results from testing the effect of the number of bins through the four step registration. The lines are the mean over all points. The best results are (a): green at $1.42\mathrm  {e}{-4}$, (b): green at $3.74\mathrm  {e}{-3}$, and (c): green at $2.60\mathrm  {e}{-3}$.}}{12}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {MSE}}}{12}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Curl}}}{12}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {(Absolute) Divergence}}}{12}}
+\newlabel{fig:binstest}{{15}{12}}
+\newlabel{fig:binstest@cref}{{[figure][15][]15}{[1][11][]12}}
+\newlabel{subfig:kappamse}{{16a}{12}}
+\newlabel{sub@subfig:kappamse}{{(a)}{a}}
+\newlabel{subfig:kappamse@cref}{{[subfigure][1][16]16a}{[1][11][]12}}
+\newlabel{subfig:kappacurl}{{16b}{12}}
+\newlabel{sub@subfig:kappacurl}{{(b)}{b}}
+\newlabel{subfig:kappacurl@cref}{{[subfigure][2][16]16b}{[1][11][]12}}
+\newlabel{subfig:kappadiv}{{16c}{12}}
+\newlabel{sub@subfig:kappadiv}{{(c)}{c}}
+\newlabel{subfig:kappadiv@cref}{{[subfigure][3][16]16c}{[1][11][]12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Results from testing the effect of smoothness of the directional interpolation through the four step registration. The lines are the mean over all points. The best results are the yellow line at $\kappa =30$ with (a): $9.17\mathrm  {e}{-5}$, (b): $2.71\mathrm  {e}{-3}$, and (c): $2.29\mathrm  {e}{-3}$. However, the overall difference between $\kappa =10$ and $\kappa =30$ is not more than around $1\mathrm  {e}{-5}$.}}{12}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {MSE}}}{12}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Curl}}}{12}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {(Absolute) Divergence}}}{12}}
+\newlabel{fig:kappatest}{{16}{12}}
+\newlabel{fig:kappatest@cref}{{[figure][16][]16}{[1][11][]12}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.6}The Quantitative Effect of the Spatial Resolution}{12}}
+\newlabel{subsec:spatialparam}{{4.5.6}{12}}
+\newlabel{subsec:spatialparam@cref}{{[subsubsection][6][4,5]4.5.6}{[1][12][]12}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.5.7}A Qualitative Example of the Results}{12}}
+\newlabel{subsec:qualitativeresult}{{4.5.7}{12}}
+\newlabel{subsec:qualitativeresult@cref}{{[subsubsection][7][4,5]4.5.7}{[1][12][]12}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{12}}
+\bibstyle{spmpsci}
+\bibdata{IEEEabrv,mybib}
+\bibcite{AbramowitzStegun1974}{1}
+\newlabel{subfig:spatialmse}{{17a}{13}}
+\newlabel{sub@subfig:spatialmse}{{(a)}{a}}
+\newlabel{subfig:spatialmse@cref}{{[subfigure][1][17]17a}{[1][12][]13}}
+\newlabel{subfig:spatialcurl}{{17b}{13}}
+\newlabel{sub@subfig:spatialcurl}{{(b)}{b}}
+\newlabel{subfig:spatialcurl@cref}{{[subfigure][2][17]17b}{[1][12][]13}}
+\newlabel{subfig:spatialdiv}{{17c}{13}}
+\newlabel{sub@subfig:spatialdiv}{{(c)}{c}}
+\newlabel{subfig:spatialdiv@cref}{{[subfigure][3][17]17c}{[1][12][]13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Results from testing the effect of changing the spatial resolution from low to full. The lines are the mean over all points. For the full (blue) and low-to-full (red) resolution, the difference in results are (a): blue $1.42\mathrm  {e}{-4}$ vs red $1.58\mathrm  {e}{-4}$, (b): blue $3.74\mathrm  {e}{-3}$ vs red $4.21\mathrm  {e}{-3}$, and (c): blue $2.60\mathrm  {e}{-3}$ vs red $2.70\mathrm  {e}{-3}$.}}{13}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {MSE}}}{13}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Curl}}}{13}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {(Absolute) Divergence}}}{13}}
+\newlabel{fig:spatialtest}{{17}{13}}
+\newlabel{fig:spatialtest@cref}{{[figure][17][]17}{[1][12][]13}}
+\newlabel{subfig:cc_slice_2D}{{18a}{13}}
+\newlabel{sub@subfig:cc_slice_2D}{{(a)}{a}}
+\newlabel{subfig:cc_slice_2D@cref}{{[subfigure][1][18]18a}{[1][12][]13}}
+\newlabel{subfig:cc_warp_2D}{{18b}{13}}
+\newlabel{sub@subfig:cc_warp_2D}{{(b)}{b}}
+\newlabel{subfig:cc_warp_2D@cref}{{[subfigure][2][18]18b}{[1][12][]13}}
+\newlabel{subfig:cc_warp_2D_registered}{{18c}{13}}
+\newlabel{sub@subfig:cc_warp_2D_registered}{{(c)}{c}}
+\newlabel{subfig:cc_warp_2D_registered@cref}{{[subfigure][3][18]18c}{[1][12][]13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces 2D visualization of \Cref  {subfig:cc_slice}, and the reconstructed warped image after applying the deformation field to the original image. We will be registering (b) back to (a).}}{13}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Ground truth}}}{13}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Warped image}}}{13}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Registered image reconstruction}}}{13}}
+\newlabel{fig:cc_slice_2D_result}{{18}{13}}
+\newlabel{fig:cc_slice_2D_result@cref}{{[figure][18][]18}{[1][12][]13}}
+\newlabel{subfig:cc_slice_3D_zoom}{{19a}{13}}
+\newlabel{sub@subfig:cc_slice_3D_zoom}{{(a)}{a}}
+\newlabel{subfig:cc_slice_3D_zoom@cref}{{[subfigure][1][19]19a}{[1][12][]13}}
+\newlabel{subfig:cc_warp_3D_zoom_result}{{19b}{13}}
+\newlabel{sub@subfig:cc_warp_3D_zoom_result}{{(b)}{b}}
+\newlabel{subfig:cc_warp_3D_zoom_result@cref}{{[subfigure][2][19]19b}{[1][12][]13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Same as \Cref  {fig:cc_slice_2D_result}, zoomed in on the left side (anterior) of the figure (around the Genu). The images are not a 100 percent the same, but the difference is hard to notice, and the registration more than adequate.}}{13}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Ground truth}}}{13}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Registered image reconstruction}}}{13}}
+\newlabel{fig:cc_slice_result_zoom}{{19}{13}}
+\newlabel{fig:cc_slice_result_zoom@cref}{{[figure][19][]19}{[1][12][]13}}
+\bibcite{avants2009advanced}{2}
+\bibcite{darknersporring2011ipmi}{3}
+\bibcite{darkner2013locally}{4}
+\bibcite{darknersporring2012pami}{5}
+\bibcite{descoteaux2007regularized}{6}
+\bibcite{garyfallidis2014dipy}{7}
+\bibcite{helmholz1858}{8}
+\bibcite{hermosillo2002variational}{9}
+\bibcite{irfanoglu2016dr}{10}
+\bibcite{jenkinson2012fsl}{11}
+\bibcite{jensen2015locally}{12}
+\bibcite{johansen2013diffusion}{13}
+\bibcite{jupp1989unified}{14}
+\bibcite{klein2010elastix}{15}
+\bibcite{koenderink1999structure}{16}
+\bibcite{o2017advances}{17}
+\bibcite{riyahi2014regularization}{18}
+\bibcite{rueckert2006diffeomorphic}{19}
+\bibcite{rueckert1999nonrigid}{20}
+\bibcite{schmidt2005minfunc}{21}
+\bibcite{semechko2012suite}{22}
+\bibcite{sporring2011jacobians}{23}
+\bibcite{studholme1999overlap}{24}
+\bibcite{tao2006method}{25}
+\bibcite{tournier2012mrtrix}{26}
+\bibcite{treiber2016characterization}{27}
+\bibcite{van2013wu}{28}
+\bibcite{van2007nonrigid}{29}
+\bibcite{wang2011dti}{30}
+\bibcite{wang2017evaluations}{31}
+\bibcite{wang2016evaluation}{32}
+\bibcite{wells1996mmv}{33}
+\bibcite{yeo2009dt}{34}
+\bibcite{zhang2006deformable}{35}
+\bibcite{zhang2014large}{36}

@@ -1,0 +1,110 @@
+%--------------------
+% Packages
+% -------------------
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{gentium}
+\usepackage{mathptmx} % Use Times Font
+
+
+\usepackage[pdftex]{graphicx} % Required for including pictures
+\usepackage[swedish]{babel} % Swedish translations
+\usepackage[pdftex,linkcolor=black,pdfborder={0 0 0}]{hyperref} % Format links for pdf
+\usepackage{calc} % To reset the counter in the document after title page
+\usepackage{enumitem} % Includes lists
+
+\frenchspacing % No double spacing between sentences
+\linespread{1.2} % Set linespace
+\usepackage[a4paper, lmargin=0.1666\paperwidth, rmargin=0.1666\paperwidth, tmargin=0.1111\paperheight, bmargin=0.1111\paperheight]{geometry} %margins
+%\usepackage{parskip}
+
+\usepackage[all]{nowidow} % Tries to remove widows
+\usepackage[protrusion=true,expansion=true]{microtype} % Improves typography, load after fontpackage is selected
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+
+%-----------------------
+% Set pdf information and add title, fill in the fields
+%-----------------------
+\hypersetup{ 	
+pdfsubject = {},
+pdftitle = {},
+pdfauthor = {}
+}
+
+%-----------------------
+% Begin document
+%-----------------------
+\begin{document}
+
+Editor-in-Chief:
+
+Dear Francois,
+
+Thank you for your submission. Based on the three reviews below, your manuscript can be considered for publication in JMIV provided that it undergoes a major revision. Please follow the recommendations carefully and provide a response to the reviewers in which you copy their individual remarks and explain how you have addressed each of them. I look forward to receiving your revised manuscript.
+
+With best regards,
+Joachim
+
+
+Dear Francois
+
+I'm sorry to inform you that the paper in its current form is not ready for publication in JMIV but requires a major revision. The opinions of the three reviewers are very similar. Ref4 is slightly positive, Ref2 is slighly negative and Ref4 is somehow in between. From my perspective, the main issues are that the application needs more motivation and that the paper should be made more readable for a non-expert reader.
+
+I also apologize for the long reviewing period: nine potetial reviewer declined.
+
+Stay healthy,
+Associate Editor
+
+
+
+
+\section{reviewer2}
+Reviewer \#2: Referee report for 'Information-Theoretic Registration with Explicit Reorientation of Diffusion-Weighted Images'
+The authors propose a registration model tailored to applications in DWI-MRI that can handle images with spatio-directional information that depend not only on location but also a gradient direction. The authors derive an optimality system for their model and present numerous computational registration results for both synthetic and real DWI datasets.
+
+The numerical results are genuinely interesting \& look promising. There are, however, numerous substantial issues with remaining parts of the paper. The major issues in my opinion are as follows:
+\begin{enumerate}
+    \item  The application and its wider context are extremely unclear to me, and I say this as a researcher with a background in mathematical modelling of MRI. The introduction to DWI is extremely short and rather poor in my opinion. I believe there should be more emphasis on the explanation of the application and a discussion of the mathematical challenges and - most importantly - the reasons why there is a need for the information-theoretic approach to registration that the authors propose. At the moment, this motivation is virtually absent. At some point the authors say that 'the geometry of DWI makes it a challenge in image registration', but it is completely unclear to me what type of geometry they refer to. The geometry of the scanner, the geometry of the recovered quantities, or some other form of geometry? All in all I would welcome a much more thorough motivation of the problem.
+\item[] In general, the writing of the article is not very clear at times. There are a lot of abbreviations that are not necessarily always clear to the non-expert reader. But more importantly, a lot of mathematical notation is introduced without sufficient explanation (see also some of the minor comments below). The general writing of the article could also be improved. There are numerous small grammar mistakes and typos (e.g. '…in our model make the model better…' —> '…in our model makes the model better…' etc.)
+\item[] The authors spent a large portion of their paper on the derivation of the optimality conditions of the continuous system, without using this optimality system at any stage afterwards. In particular, there is not much of a discussion on how these conditions are implemented in practice (the authors merely state that they use L-BFGS to numerically solve the nonlinear system of equations that runs for 50 iterations for all resolutions - does this imply a coarse-to-fine multi-scale approach?). Further, in this day and age many very powerful automatic differentiation frameworks are available. The question that inevitably arises is the one for the added benefit of stating the continuous optimality system if is is never used? 4. Many mathematically relevant questions, like existence of a solution to the variational problem (10), are not addressed. Furthermore, the authors often speak of regularising properties of their model, without ever clarifying what exactly they mean by that and without referring to any form of mathematical concept. On top of that, the authors introduce an explicit regularisation term without much of a discussion and without addressing the question of whether their variational model is a regularisation to the inverse problem that they aim to solve and whether this is a regularisation in the sense of Engl/Hanke/Neubauer or a regularisation in some other sense. In general, the mathematical discussion of the proposed model is very limited (and basically reduced to the derivation of the optimality system). This is in principle okay, but the authors should then emphasise that their paper is rather of experimental than theoretical nature.
+\end{enumerate}
+Minor comments:
+\begin{enumerate}
+    \item 
+1. Page 1, line 47, second column: I believe it should be DWI instead of DTI?
+\item 2. Page 2, line 2, first column: at this stage it is not yet clear what P refers to. 
+\item 3. Page 2, line 29, first column: there is a missing reference.
+\item 4. Page 2, line 25, second column: what is a projective space? It might be good to include a reference.
+\item 5. Page 2, line 29, second column: 'to' instead of 'too'.
+\item 6. Section 3.2 header: 'Recall the LOR framework' instead of 'Recall on the LOR framework'.
+\item 7. Page 3, line 5, first column: what is a Parzen window? It would be good to include either a definition or a reference.
+\item 8. Page 3, line 2, first column: it should probably be mentioned that * denotes the convolution operation.
+\item 9. Page 3, Equation (5): it should probably be clarified what the notation \\otimes stands for.
+\item 10. Page 3, line 25, second column: 'as long' instead of 'as soon'.
+\item 11. Page 4, first paragraph: there is a reference but otherwise no explanation of where the control points c come from and what the matrix or operator B refers to. The notation for phi is also unclear at this stage. It is not helpful to refer that this will be clarified in the next subsection. This should be clarified when the notation is introduced.
+\item 12. Equation (10): it is insufficient to throw notation at the reader without properly introducing the symbols. What is F, what is S? The authors say that this is a regularised normalised mutual information model, but it is still necessary to define the individual terms or give appropriate references.
+\item 13. Page 4, Figure 1: the dependency graph is not clear at all. There is a lot of notation that is not explained, which makes the graph more confusing than helpful in my opinion. Without further explanation it would be better to scrap the figure.
+\item 14. Page 4, line 49, first column: there is another missing reference for L-BFGS.
+\item 15. Page 4, line 51 & following, first column: the numerical gradients should be easily computable via automatic differentiation, in accordance to my earlier comment.
+\item 16. Page 4, line 52, second column: the equation numbered (16) does not require a number.
+\item 17. Page 4, line 58, second column: this is the first time that it is mentioned that B is a matrix that is built from cubic B-splines. This should have been explained when B was introduced.
+\item 18. Page 5, line 46, first column: this 'inherent' regularisation has to be demonstrated. Where is it coming from and how does it regularise? In what sense is it a regularisation?
+\item 19. Page 5, line 57-59, second column: it would be better to make the code available through an ideally permanent repository.
+\item 20. Page 6, line 7 & following, first column: there are a several abbreviations that are not explained, such as ODF and QBI.
+
+\end{enumerate}
+
+Reviewer #3: This is interesting work that extends the authors' earlier efforts on the same problem for which a global affine solution was previously developed. The extension to the space of nonrigid transformations is a meaningful enhancement, and the approach appears reasonable and technically sound. 
+A few comments and questions: 
+\begin{enumerate}
+    \item 
+
+
+First, given the availability of a global affine solution, would it be possible to apply such by modeling the nonrigid transformation as locally affine? Alternative methods that incorporate explicit reorientation and utilize orientation information were discussed but no comparison with any of these were made in the experimental studies - why? A likely - and challenging - outcome of such a comparison would show similar performance in registration fidelity (in the sense that moving and target images are well aligned afterwards) but (slightly?) different regularization behavior. The challenge is the lack of ground truth for the latter. A reasonable
+position may be that the best regularizer is the one that yields the best correspondence, but the current set of experiments would not be adequate for demonstrating this because either the ground truth transformation is not available or the registration problem is ill-posed (given a synthetically warped target, more than one transformation may produce the same target image). These limitations are not intended to criticize the work here but are general challenges to the field. That said, some discussion of the work within the context of existing approaches would have potential of shedding more light on the general DWI registration problem.
+One more minor comment is that the manuscript would benefit from closer proofreading and attention to formatting.
+\end{enumerate}
+\end{document}

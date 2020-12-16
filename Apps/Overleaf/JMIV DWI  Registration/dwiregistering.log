@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.4.4)  14 DEC 2020 21:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.4.4)  16 DEC 2020 19:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -658,18 +658,18 @@ LaTeX Info: Redefining \addtolength on input line 81.
 ) (./dwiregistering.aux)
 \openout1 = `dwiregistering.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
 
 Unknown journal: specify \journalname{<name of your journal>} in preambel
 
@@ -721,215 +721,215 @@ SVJour3 warning: Missing \journalname
 SVJour3 warning: Missing \date
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <16> not available
-(Font)              size <17.28> substituted on input line 86.
+(Font)              size <17.28> substituted on input line 99.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 86.
+LaTeX Font Info:    Try loading font information for U+msa on input line 99.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 86.
+LaTeX Font Info:    Try loading font information for U+msb on input line 99.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 86.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 99.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 86.
+LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 99.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <8.5> not available
-(Font)              size <8> substituted on input line 86.
+(Font)              size <8> substituted on input line 99.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.25> not available
-(Font)              size <5> substituted on input line 86.
+(Font)              size <5> substituted on input line 99.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 86.
+(Font)              size <8> substituted on input line 99.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.25> not available
-(Font)              size <5> substituted on input line 86.
+(Font)              size <5> substituted on input line 99.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 86.
+(Font)              size <8> substituted on input line 99.
 
 
 LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <4.25> not available
-(Font)              size <5> substituted on input line 86.
+(Font)              size <5> substituted on input line 99.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 86.
+(Font)              size <8> substituted on input line 99.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <4.25> not available
-(Font)              size <5> substituted on input line 86.
+(Font)              size <5> substituted on input line 99.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <8.5> not available
-(Font)              size <8> substituted on input line 86.
+(Font)              size <8> substituted on input line 99.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <4.25> not available
-(Font)              size <5> substituted on input line 86.
+(Font)              size <5> substituted on input line 99.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 86.
+(Font)              size <8> substituted on input line 99.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <4.25> not available
-(Font)              size <5> substituted on input line 86.
+(Font)              size <5> substituted on input line 99.
 
 
-Overfull \hbox (7.14842pt too wide) in paragraph at lines 91--105
+Overfull \hbox (7.14842pt too wide) in paragraph at lines 104--118
 []\OT1/cmr/m/n/10 We present an information-theoretic ap-proach
  []
 
 
-Overfull \hbox (1.5085pt too wide) in paragraph at lines 163--173
+Overfull \hbox (1.5085pt too wide) in paragraph at lines 174--184
 \OT1/cmr/m/n/10 tend-ing the Lo-cally Or-der-less Reg-is-tra-tion for Diffusion
 -
  []
 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Overfull \hbox (1.45282pt too wide) in paragraph at lines 218--220
+Overfull \hbox (1.45282pt too wide) in paragraph at lines 229--231
 \OT1/cmr/m/n/10 This work ad-dresses two ma-jor chal-lenges in voxel-based
  []
 
 
 LaTeX Warning: Citation ` fischl2012freesurfer' on page 2 undefined on input li
-ne 232.
+ne 243.
 
 [2]
-Overfull \hbox (14.842pt too wide) in paragraph at lines 313--317
+Overfull \hbox (14.842pt too wide) in paragraph at lines 329--333
 \OT1/cmr/m/n/10 squared dif-fer-ences and Hu-ber, and the non-linear $\OML/cmm/
 m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 p\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 i
 ; j\OT1/cmr/m/n/10 ))$
  []
 
 
-Overfull \hbox (6.2863pt too wide) in paragraph at lines 320--334
-\OT1/cmr/m/n/10 DWI, the his-togram and den-sity es-ti-mates Equa-tion (3.1)
- []
-
-
-Overfull \hbox (2.00836pt too wide) detected at line 346
-[]
- []
-
-
-Overfull \hbox (2.7405pt too wide) detected at line 386
+Overfull \hbox (2.00836pt too wide) detected at line 362
 []
  []
 
 [3]
-Overfull \hbox (12.98074pt too wide) in paragraph at lines 488--491
+Overfull \hbox (2.7405pt too wide) detected at line 403
+[]
+ []
+
+
+Overfull \hbox (12.98074pt too wide) in paragraph at lines 505--508
 \OT1/cmr/m/n/10 We com-pute the Ja-co-bian of the spatio-directional smooth-
  []
 
 
-Overfull \hbox (21.4003pt too wide) detected at line 498
+Overfull \hbox (21.4003pt too wide) detected at line 515
 []
  []
 
 [4]
-Overfull \hbox (9.21738pt too wide) detected at line 555
+Overfull \hbox (9.21738pt too wide) detected at line 572
 []
  []
 
+[5]
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 612.
+(Font)              size <8> substituted on input line 629.
 
-[5]
 <figures/single_voxel_l.pdf, id=49, 284.06125pt x 253.94875pt>
 File: figures/single_voxel_l.pdf Graphic file (type pdf)
 <use figures/single_voxel_l.pdf>
-Package pdftex.def Info: figures/single_voxel_l.pdf  used on input line 626.
+Package pdftex.def Info: figures/single_voxel_l.pdf  used on input line 643.
 (pdftex.def)             Requested size: 71.68997pt x 64.0915pt.
 
-
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 626.
+(Font)              size <8> substituted on input line 643.
 
 <figures/single_voxel_l_FRT.pdf, id=50, 304.13625pt x 252.945pt>
 File: figures/single_voxel_l_FRT.pdf Graphic file (type pdf)
 <use figures/single_voxel_l_FRT.pdf>
-Package pdftex.def Info: figures/single_voxel_l_FRT.pdf  used on input line 628
+Package pdftex.def Info: figures/single_voxel_l_FRT.pdf  used on input line 645
 .
 (pdftex.def)             Requested size: 71.68997pt x 59.62347pt.
 <figures/single_voxel_x.pdf, id=51, 309.155pt x 252.945pt>
 File: figures/single_voxel_x.pdf Graphic file (type pdf)
 <use figures/single_voxel_x.pdf>
-Package pdftex.def Info: figures/single_voxel_x.pdf  used on input line 630.
+Package pdftex.def Info: figures/single_voxel_x.pdf  used on input line 647.
 (pdftex.def)             Requested size: 107.53314pt x 87.98015pt.
 <figures/single_voxel_x_FRT.pdf, id=52, 335.2525pt x 201.75375pt>
 File: figures/single_voxel_x_FRT.pdf Graphic file (type pdf)
 <use figures/single_voxel_x_FRT.pdf>
-Package pdftex.def Info: figures/single_voxel_x_FRT.pdf  used on input line 632
+Package pdftex.def Info: figures/single_voxel_x_FRT.pdf  used on input line 649
 .
 (pdftex.def)             Requested size: 107.53314pt x 64.71336pt.
 <figures/cross_default_n.pdf, id=53, 336.25626pt x 167.62625pt>
 File: figures/cross_default_n.pdf Graphic file (type pdf)
 <use figures/cross_default_n.pdf>
-Package pdftex.def Info: figures/cross_default_n.pdf  used on input line 647.
+Package pdftex.def Info: figures/cross_default_n.pdf  used on input line 664.
 (pdftex.def)             Requested size: 238.96417pt x 119.12544pt.
 <figures/cross_default_n_FRT.pdf, id=54, 333.245pt x 163.61125pt>
 File: figures/cross_default_n_FRT.pdf Graphic file (type pdf)
 <use figures/cross_default_n_FRT.pdf>
-Package pdftex.def Info: figures/cross_default_n_FRT.pdf  used on input line 64
-9.
+Package pdftex.def Info: figures/cross_default_n_FRT.pdf  used on input line 66
+6.
 (pdftex.def)             Requested size: 238.96417pt x 117.32567pt.
 <figures/cross_default_ns.pdf, id=55, 253.94875pt x 251.94125pt>
 File: figures/cross_default_ns.pdf Graphic file (type pdf)
 <use figures/cross_default_ns.pdf>
-Package pdftex.def Info: figures/cross_default_ns.pdf  used on input line 657.
+Package pdftex.def Info: figures/cross_default_ns.pdf  used on input line 674.
 (pdftex.def)             Requested size: 113.50943pt x 112.61133pt.
 <figures/cross_default_ns_FRT.pdf, id=56, 253.94875pt x 251.94125pt>
 File: figures/cross_default_ns_FRT.pdf Graphic file (type pdf)
 <use figures/cross_default_ns_FRT.pdf>
 Package pdftex.def Info: figures/cross_default_ns_FRT.pdf  used on input line 6
-59.
+76.
 (pdftex.def)             Requested size: 113.50943pt x 112.61133pt.
 
-Overfull \hbox (2.28105pt too wide) in paragraph at lines 657--661
+Overfull \hbox (2.28105pt too wide) in paragraph at lines 674--678
  [][]| [] 
  []
 
 
-Overfull \hbox (0.39737pt too wide) in paragraph at lines 676--678
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <./figures/single_voxel_l.pdf> <./figures/single_voxel_l_FRT.pdf> <./figure
+s/single_voxel_x.pdf> <./figures/single_voxel_x_FRT.pdf> <./figures/cross_defau
+lt_n.pdf> <./figures/cross_default_n_FRT.pdf>]
+Overfull \hbox (0.39737pt too wide) in paragraph at lines 693--695
 []\OT1/cmr/m/n/10 The con-
  []
 
-[6 <./figures/single_voxel_l.pdf> <./figures/single_voxel_l_FRT.pdf> <./figures
-/single_voxel_x.pdf> <./figures/single_voxel_x_FRT.pdf> <./figures/cross_defaul
-t_n.pdf> <./figures/cross_default_n_FRT.pdf>]
-Overfull \hbox (6.59181pt too wide) in paragraph at lines 683--687
+
+Overfull \hbox (6.59181pt too wide) in paragraph at lines 700--704
 []\OT1/cmr/m/n/10 We reg-is-ter the
  []
 
 <figures/straight_l_FRT.pdf, id=86, 253.94875pt x 251.94125pt>
 File: figures/straight_l_FRT.pdf Graphic file (type pdf)
 <use figures/straight_l_FRT.pdf>
-Package pdftex.def Info: figures/straight_l_FRT.pdf  used on input line 714.
+Package pdftex.def Info: figures/straight_l_FRT.pdf  used on input line 731.
 (pdftex.def)             Requested size: 113.50943pt x 112.61133pt.
 <figures/wavy_l_FRT.pdf, id=87, 253.94875pt x 251.94125pt>
 File: figures/wavy_l_FRT.pdf Graphic file (type pdf)
 <use figures/wavy_l_FRT.pdf>
-Package pdftex.def Info: figures/wavy_l_FRT.pdf  used on input line 715.
+Package pdftex.def Info: figures/wavy_l_FRT.pdf  used on input line 732.
 (pdftex.def)             Requested size: 113.50943pt x 112.61133pt.
 
-Overfull \hbox (2.28105pt too wide) in paragraph at lines 714--717
+Overfull \hbox (2.28105pt too wide) in paragraph at lines 731--734
  [][]| [] 
  []
 
@@ -937,16 +937,16 @@ Overfull \hbox (2.28105pt too wide) in paragraph at lines 714--717
 File: figures/straight2wavy_FRT_deform.pdf Graphic file (type pdf)
 <use figures/straight2wavy_FRT_deform.pdf>
 Package pdftex.def Info: figures/straight2wavy_FRT_deform.pdf  used on input li
-ne 731.
+ne 748.
 (pdftex.def)             Requested size: 113.50943pt x 112.16924pt.
 <figures/straight2wavy_FRT_arrows.pdf, id=89, 254.9525pt x 251.94125pt>
 File: figures/straight2wavy_FRT_arrows.pdf Graphic file (type pdf)
 <use figures/straight2wavy_FRT_arrows.pdf>
 Package pdftex.def Info: figures/straight2wavy_FRT_arrows.pdf  used on input li
-ne 733.
+ne 750.
 (pdftex.def)             Requested size: 113.50943pt x 112.16924pt.
 
-Overfull \hbox (2.28105pt too wide) in paragraph at lines 731--735
+Overfull \hbox (2.28105pt too wide) in paragraph at lines 748--752
  [][]| [] 
  []
 
@@ -955,17 +955,17 @@ pt>
 File: figures/straight2wavy_noboundary_FRT_deform.pdf Graphic file (type pdf)
 <use figures/straight2wavy_noboundary_FRT_deform.pdf>
 Package pdftex.def Info: figures/straight2wavy_noboundary_FRT_deform.pdf  used 
-on input line 745.
+on input line 762.
 (pdftex.def)             Requested size: 113.50943pt x 112.16924pt.
 <figures/straight2wavy_noboundary_FRT_arrows.pdf, id=91, 254.9525pt x 251.94125
 pt>
 File: figures/straight2wavy_noboundary_FRT_arrows.pdf Graphic file (type pdf)
 <use figures/straight2wavy_noboundary_FRT_arrows.pdf>
 Package pdftex.def Info: figures/straight2wavy_noboundary_FRT_arrows.pdf  used 
-on input line 747.
+on input line 764.
 (pdftex.def)             Requested size: 113.50943pt x 112.16924pt.
 
-Overfull \hbox (2.28105pt too wide) in paragraph at lines 745--750
+Overfull \hbox (2.28105pt too wide) in paragraph at lines 762--767
  [][]| [] 
  []
 
@@ -975,7 +975,7 @@ File: figures/straight2wavy_noboundary_kappa0_FRT_deform.pdf Graphic file (type
  pdf)
 <use figures/straight2wavy_noboundary_kappa0_FRT_deform.pdf>
 Package pdftex.def Info: figures/straight2wavy_noboundary_kappa0_FRT_deform.pdf
-  used on input line 761.
+  used on input line 778.
 (pdftex.def)             Requested size: 113.50943pt x 112.16924pt.
 <figures/straight2wavy_noboundary_kappa0_FRT_arrows.pdf, id=93, 254.9525pt x 25
 1.94125pt>
@@ -983,176 +983,167 @@ File: figures/straight2wavy_noboundary_kappa0_FRT_arrows.pdf Graphic file (type
  pdf)
 <use figures/straight2wavy_noboundary_kappa0_FRT_arrows.pdf>
 Package pdftex.def Info: figures/straight2wavy_noboundary_kappa0_FRT_arrows.pdf
-  used on input line 763.
+  used on input line 780.
 (pdftex.def)             Requested size: 113.50943pt x 112.16924pt.
 
-Overfull \hbox (2.28105pt too wide) in paragraph at lines 761--764
+Overfull \hbox (2.28105pt too wide) in paragraph at lines 778--781
  [][]| [] 
  []
 
 
-Underfull \hbox (badness 1584) in paragraph at lines 764--764
+Underfull \hbox (badness 1584) in paragraph at lines 781--781
 []\OT1/cmr/bx/n/8 Fig. 8|\OT1/cmr/m/n/8.5 Experiment 1: Scalar-based reg-is-tra
 -tion with-out
  []
 
 
-Overfull \hbox (0.67502pt too wide) in paragraph at lines 705--771
+Overfull \hbox (0.67502pt too wide) in paragraph at lines 722--788
 \OT1/cmr/m/n/10 where straight fibers are reg-is-tered to wavy fibers. These
  []
 
-
-Underfull \vbox (badness 1953) has occurred while \output is active []
-
- [7 <./figures/cross_default_ns.pdf> <./figures/cross_default_ns_FRT.pdf> <./fi
-gures/straight_l_FRT.pdf> <./figures/wavy_l_FRT.pdf> <./figures/straight2wavy_F
-RT_deform.pdf> <./figures/straight2wavy_FRT_arrows.pdf>]
-Overfull \hbox (5.56406pt too wide) in paragraph at lines 791--799
+[7 <./figures/cross_default_ns.pdf> <./figures/cross_default_ns_FRT.pdf> <./fig
+ures/straight_l_FRT.pdf> <./figures/wavy_l_FRT.pdf>]
+Overfull \hbox (5.56406pt too wide) in paragraph at lines 808--816
 \OT1/cmr/m/n/10 shear with a fixed hor-i-zon-tal tract ( Fig-ures 10a and 10b).
 
  []
 
 
-Overfull \hbox (1.67508pt too wide) in paragraph at lines 791--799
+Overfull \hbox (1.67508pt too wide) in paragraph at lines 808--816
 \OT1/cmr/m/n/10 com-plex center-crossing closely matches the ori-en-ta-tions
  []
 
-
-Overfull \hbox (1.86955pt too wide) in paragraph at lines 821--826
+[8 <./figures/straight2wavy_FRT_deform.pdf> <./figures/straight2wavy_FRT_arrows
+.pdf> <./figures/straight2wavy_noboundary_FRT_deform.pdf> <./figures/straight2w
+avy_noboundary_FRT_arrows.pdf> <./figures/straight2wavy_noboundary_kappa0_FRT_d
+eform.pdf> <./figures/straight2wavy_noboundary_kappa0_FRT_arrows.pdf>]
+Overfull \hbox (1.86955pt too wide) in paragraph at lines 838--843
 \OT1/cmr/m/n/10 that are reg-is-tered to two curv-ing and in-ter-leav-ing tract
 s
  []
 
-[8 <./figures/straight2wavy_noboundary_FRT_deform.pdf> <./figures/straight2wavy
-_noboundary_FRT_arrows.pdf> <./figures/straight2wavy_noboundary_kappa0_FRT_defo
-rm.pdf> <./figures/straight2wavy_noboundary_kappa0_FRT_arrows.pdf>]
 <figures/straight_x_FRT.pdf, id=141, 253.94875pt x 251.94125pt>
 File: figures/straight_x_FRT.pdf Graphic file (type pdf)
 <use figures/straight_x_FRT.pdf>
-Package pdftex.def Info: figures/straight_x_FRT.pdf  used on input line 832.
+Package pdftex.def Info: figures/straight_x_FRT.pdf  used on input line 849.
 (pdftex.def)             Requested size: 119.48209pt x 118.53542pt.
 <figures/shifted_x_FRT.pdf, id=142, 253.94875pt x 251.94125pt>
 File: figures/shifted_x_FRT.pdf Graphic file (type pdf)
 <use figures/shifted_x_FRT.pdf>
-Package pdftex.def Info: figures/shifted_x_FRT.pdf  used on input line 834.
+Package pdftex.def Info: figures/shifted_x_FRT.pdf  used on input line 851.
 (pdftex.def)             Requested size: 119.48209pt x 118.53542pt.
 <figures/straigt2shift_FRT_deform.pdf, id=143, 254.9525pt x 251.94125pt>
 File: figures/straigt2shift_FRT_deform.pdf Graphic file (type pdf)
 <use figures/straigt2shift_FRT_deform.pdf>
 Package pdftex.def Info: figures/straigt2shift_FRT_deform.pdf  used on input li
-ne 836.
+ne 853.
 (pdftex.def)             Requested size: 119.48209pt x 118.07025pt.
 <figures/straigt2shift_FRT_arrows.pdf, id=144, 254.9525pt x 251.94125pt>
 File: figures/straigt2shift_FRT_arrows.pdf Graphic file (type pdf)
 <use figures/straigt2shift_FRT_arrows.pdf>
 Package pdftex.def Info: figures/straigt2shift_FRT_arrows.pdf  used on input li
-ne 838.
+ne 855.
 (pdftex.def)             Requested size: 119.48209pt x 118.07025pt.
 <figures/sheared30_x_FRT.pdf, id=145, 253.94875pt x 251.94125pt>
 File: figures/sheared30_x_FRT.pdf Graphic file (type pdf)
 <use figures/sheared30_x_FRT.pdf>
-Package pdftex.def Info: figures/sheared30_x_FRT.pdf  used on input line 848.
+Package pdftex.def Info: figures/sheared30_x_FRT.pdf  used on input line 865.
 (pdftex.def)             Requested size: 119.48209pt x 118.53542pt.
 <figures/sheared45_x_FRT.pdf, id=146, 253.94875pt x 251.94125pt>
 File: figures/sheared45_x_FRT.pdf Graphic file (type pdf)
 <use figures/sheared45_x_FRT.pdf>
-Package pdftex.def Info: figures/sheared45_x_FRT.pdf  used on input line 850.
+Package pdftex.def Info: figures/sheared45_x_FRT.pdf  used on input line 867.
 (pdftex.def)             Requested size: 119.48209pt x 118.53542pt.
 <figures/sheared2sheared_FRT_deform.pdf, id=147, 254.9525pt x 251.94125pt>
 File: figures/sheared2sheared_FRT_deform.pdf Graphic file (type pdf)
 <use figures/sheared2sheared_FRT_deform.pdf>
 Package pdftex.def Info: figures/sheared2sheared_FRT_deform.pdf  used on input 
-line 852.
+line 869.
 (pdftex.def)             Requested size: 119.48209pt x 118.07025pt.
 <figures/sheared2sheared_FRT_arrows.pdf, id=148, 254.9525pt x 251.94125pt>
 File: figures/sheared2sheared_FRT_arrows.pdf Graphic file (type pdf)
 <use figures/sheared2sheared_FRT_arrows.pdf>
 Package pdftex.def Info: figures/sheared2sheared_FRT_arrows.pdf  used on input 
-line 854.
+line 871.
 (pdftex.def)             Requested size: 119.48209pt x 118.07025pt.
 <figures/complex_thick_FRT.pdf, id=149, 253.94875pt x 251.94125pt>
 File: figures/complex_thick_FRT.pdf Graphic file (type pdf)
 <use figures/complex_thick_FRT.pdf>
-Package pdftex.def Info: figures/complex_thick_FRT.pdf  used on input line 863.
+Package pdftex.def Info: figures/complex_thick_FRT.pdf  used on input line 880.
 
 (pdftex.def)             Requested size: 119.48209pt x 118.53542pt.
 <figures/complex_wavy_FRT.pdf, id=150, 253.94875pt x 251.94125pt>
 File: figures/complex_wavy_FRT.pdf Graphic file (type pdf)
 <use figures/complex_wavy_FRT.pdf>
-Package pdftex.def Info: figures/complex_wavy_FRT.pdf  used on input line 865.
+Package pdftex.def Info: figures/complex_wavy_FRT.pdf  used on input line 882.
 (pdftex.def)             Requested size: 119.48209pt x 118.53542pt.
 <figures/complex_FRT_deform.pdf, id=151, 254.9525pt x 251.94125pt>
 File: figures/complex_FRT_deform.pdf Graphic file (type pdf)
 <use figures/complex_FRT_deform.pdf>
-Package pdftex.def Info: figures/complex_FRT_deform.pdf  used on input line 867
+Package pdftex.def Info: figures/complex_FRT_deform.pdf  used on input line 884
 .
 (pdftex.def)             Requested size: 119.48209pt x 118.07025pt.
 <figures/complex_FRT_arrows.pdf, id=152, 254.9525pt x 251.94125pt>
 File: figures/complex_FRT_arrows.pdf Graphic file (type pdf)
 <use figures/complex_FRT_arrows.pdf>
-Package pdftex.def Info: figures/complex_FRT_arrows.pdf  used on input line 869
+Package pdftex.def Info: figures/complex_FRT_arrows.pdf  used on input line 886
 .
 (pdftex.def)             Requested size: 119.48209pt x 118.07025pt.
 <figures/straight_ll_FRT.pdf, id=153, 253.94875pt x 251.94125pt>
 File: figures/straight_ll_FRT.pdf Graphic file (type pdf)
 <use figures/straight_ll_FRT.pdf>
-Package pdftex.def Info: figures/straight_ll_FRT.pdf  used on input line 878.
+Package pdftex.def Info: figures/straight_ll_FRT.pdf  used on input line 895.
 (pdftex.def)             Requested size: 119.48209pt x 118.53542pt.
 <figures/kissing_ll_FRT.pdf, id=154, 253.94875pt x 251.94125pt>
 File: figures/kissing_ll_FRT.pdf Graphic file (type pdf)
 <use figures/kissing_ll_FRT.pdf>
-Package pdftex.def Info: figures/kissing_ll_FRT.pdf  used on input line 880.
+Package pdftex.def Info: figures/kissing_ll_FRT.pdf  used on input line 897.
 (pdftex.def)             Requested size: 119.48209pt x 118.53542pt.
 <figures/kissing_ll_FRT_deform.pdf, id=155, 254.9525pt x 251.94125pt>
 File: figures/kissing_ll_FRT_deform.pdf Graphic file (type pdf)
 <use figures/kissing_ll_FRT_deform.pdf>
 Package pdftex.def Info: figures/kissing_ll_FRT_deform.pdf  used on input line 
-882.
+899.
 (pdftex.def)             Requested size: 119.48209pt x 118.07025pt.
 <figures/kissing_ll_FRT_arrows.pdf, id=156, 254.9525pt x 251.94125pt>
 File: figures/kissing_ll_FRT_arrows.pdf Graphic file (type pdf)
 <use figures/kissing_ll_FRT_arrows.pdf>
 Package pdftex.def Info: figures/kissing_ll_FRT_arrows.pdf  used on input line 
-885.
+902.
 (pdftex.def)             Requested size: 119.48209pt x 118.07025pt.
 <figures/B0_roi_overlay.png, id=157, 1227.58624pt x 334.24875pt>
 File: figures/B0_roi_overlay.png Graphic file (type png)
 <use figures/B0_roi_overlay.png>
-Package pdftex.def Info: figures/B0_roi_overlay.png  used on input line 906.
+Package pdftex.def Info: figures/B0_roi_overlay.png  used on input line 923.
 (pdftex.def)             Requested size: 238.96417pt x 65.06348pt.
 <figures/CC_slice_orig.pdf, id=159, 846.16125pt x 404.51125pt>
 File: figures/CC_slice_orig.pdf Graphic file (type pdf)
 <use figures/CC_slice_orig.pdf>
-Package pdftex.def Info: figures/CC_slice_orig.pdf  used on input line 924.
+Package pdftex.def Info: figures/CC_slice_orig.pdf  used on input line 941.
 (pdftex.def)             Requested size: 238.96417pt x 114.2376pt.
 <figures/deformattionfield.pdf, id=160, 459.7175pt x 231.86626pt>
 File: figures/deformattionfield.pdf Graphic file (type pdf)
 <use figures/deformattionfield.pdf>
-Package pdftex.def Info: figures/deformattionfield.pdf  used on input line 926.
+Package pdftex.def Info: figures/deformattionfield.pdf  used on input line 943.
 
 (pdftex.def)             Requested size: 238.96417pt x 120.52869pt.
 
-Overfull \hbox (3.42511pt too wide) in paragraph at lines 954--959
+Overfull \hbox (3.42511pt too wide) in paragraph at lines 971--976
 []\OT1/cmr/m/n/10 In the fol-low-ing, the ex-per-i-ments are per-formed while
  []
 
 
-Overfull \hbox (5.25847pt too wide) in paragraph at lines 959--966
+Overfull \hbox (5.25847pt too wide) in paragraph at lines 976--983
 []\OT1/cmr/m/n/10 The density-based for-mu-la-tion al-
  []
 
 
-Overfull \hbox (3.84189pt too wide) in paragraph at lines 966--974
+Overfull \hbox (3.84189pt too wide) in paragraph at lines 983--991
 []\OT1/cmr/m/n/10 The di-rec-tional in-for-ma-tion is,
  []
 
 [9 <./figures/B0_roi_overlay.png>]
-Overfull \hbox (9.9518pt too wide) in paragraph at lines 998--1004
-[]\OT1/cmr/m/n/10 While the MSE is easy
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1552) has occurred while \output is active []
 
  [10 <./figures/straight_x_FRT.pdf> <./figures/shifted_x_FRT.pdf> <./figures/st
 raigt2shift_FRT_deform.pdf> <./figures/straigt2shift_FRT_arrows.pdf> <./figures
@@ -1160,127 +1151,124 @@ raigt2shift_FRT_deform.pdf> <./figures/straigt2shift_FRT_arrows.pdf> <./figures
 d_FRT_deform.pdf> <./figures/sheared2sheared_FRT_arrows.pdf> <./figures/complex
 _thick_FRT.pdf> <./figures/complex_wavy_FRT.pdf> <./figures/complex_FRT_deform.
 pdf> <./figures/complex_FRT_arrows.pdf>]
-Overfull \hbox (25.48077pt too wide) in paragraph at lines 1004--1005
-[]\OT1/cmr/m/n/10 Changing spa-tial res-o-lu-tion is achieved
- []
-
-
-Overfull \hbox (0.9251pt too wide) in paragraph at lines 1009--1011
-\OT1/cmr/m/n/10 four ac-cu-mu-lat-ing steps. All er-ror mea-sures are re-ported
-
+Overfull \hbox (9.9518pt too wide) in paragraph at lines 1015--1021
+[]\OT1/cmr/m/n/10 While the MSE is easy
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+
+Overfull \hbox (25.48077pt too wide) in paragraph at lines 1021--1022
+[]\OT1/cmr/m/n/10 Changing spa-tial res-o-lu-tion is achieved
+ []
+
+
+Overfull \hbox (0.9251pt too wide) in paragraph at lines 1026--1028
+\OT1/cmr/m/n/10 four ac-cu-mu-lat-ing steps. All er-ror mea-sures are re-ported
+
+ []
+
 <figures/bins_mse.pdf, id=217, 516.93124pt x 402.50375pt>
 File: figures/bins_mse.pdf Graphic file (type pdf)
 <use figures/bins_mse.pdf>
-Package pdftex.def Info: figures/bins_mse.pdf  used on input line 1022.
+Package pdftex.def Info: figures/bins_mse.pdf  used on input line 1039.
 (pdftex.def)             Requested size: 143.37996pt x 111.63776pt.
 <figures/bins_curl.pdf, id=218, 516.93124pt x 402.50375pt>
 File: figures/bins_curl.pdf Graphic file (type pdf)
 <use figures/bins_curl.pdf>
-Package pdftex.def Info: figures/bins_curl.pdf  used on input line 1023.
+Package pdftex.def Info: figures/bins_curl.pdf  used on input line 1040.
 (pdftex.def)             Requested size: 143.37996pt x 111.63776pt.
 <figures/bins_div.pdf, id=219, 515.9275pt x 402.50375pt>
 File: figures/bins_div.pdf Graphic file (type pdf)
 <use figures/bins_div.pdf>
-Package pdftex.def Info: figures/bins_div.pdf  used on input line 1025.
+Package pdftex.def Info: figures/bins_div.pdf  used on input line 1042.
 (pdftex.def)             Requested size: 143.37996pt x 111.85886pt.
 <figures/kappa_mse.pdf, id=220, 518.93875pt x 403.5075pt>
 File: figures/kappa_mse.pdf Graphic file (type pdf)
 <use figures/kappa_mse.pdf>
-Package pdftex.def Info: figures/kappa_mse.pdf  used on input line 1051.
+Package pdftex.def Info: figures/kappa_mse.pdf  used on input line 1068.
 (pdftex.def)             Requested size: 143.37996pt x 111.48517pt.
 <figures/kappa_curl.pdf, id=221, 518.93875pt x 403.5075pt>
 File: figures/kappa_curl.pdf Graphic file (type pdf)
 <use figures/kappa_curl.pdf>
-Package pdftex.def Info: figures/kappa_curl.pdf  used on input line 1052.
+Package pdftex.def Info: figures/kappa_curl.pdf  used on input line 1069.
 (pdftex.def)             Requested size: 143.37996pt x 111.48517pt.
 <figures/kappa_div.pdf, id=222, 515.9275pt x 403.5075pt>
 File: figures/kappa_div.pdf Graphic file (type pdf)
 <use figures/kappa_div.pdf>
-Package pdftex.def Info: figures/kappa_div.pdf  used on input line 1053.
+Package pdftex.def Info: figures/kappa_div.pdf  used on input line 1070.
 (pdftex.def)             Requested size: 143.37996pt x 112.13782pt.
 
-Overfull \hbox (17.0364pt too wide) in paragraph at lines 1044--1067
+Overfull \hbox (17.0364pt too wide) in paragraph at lines 1061--1084
 \OT1/cmr/m/n/10 togram from the pre-vi-ous ex-per-i-ment (i.e. [50,100,200,500]
 ),
  []
 
-[11 <./figures/straight_ll_FRT.pdf> <./figures/kissing_ll_FRT.pdf> <./figures/k
-issing_ll_FRT_deform.pdf> <./figures/kissing_ll_FRT_arrows.pdf> <./figures/CC_s
-lice_orig.pdf> <./figures/deformattionfield.pdf>]
+
+Underfull \vbox (badness 3657) has occurred while \output is active []
+
+ [11 <./figures/straight_ll_FRT.pdf> <./figures/kissing_ll_FRT.pdf> <./figures/
+kissing_ll_FRT_deform.pdf> <./figures/kissing_ll_FRT_arrows.pdf> <./figures/CC_
+slice_orig.pdf> <./figures/deformattionfield.pdf>]
 <figures/spatial_mse.pdf, id=251, 489.83pt x 421.575pt>
 File: figures/spatial_mse.pdf Graphic file (type pdf)
 <use figures/spatial_mse.pdf>
-Package pdftex.def Info: figures/spatial_mse.pdf  used on input line 1075.
+Package pdftex.def Info: figures/spatial_mse.pdf  used on input line 1092.
 (pdftex.def)             Requested size: 131.43102pt x 113.11273pt.
 <figures/spatial_curl.pdf, id=252, 518.93875pt x 402.50375pt>
 File: figures/spatial_curl.pdf Graphic file (type pdf)
 <use figures/spatial_curl.pdf>
-Package pdftex.def Info: figures/spatial_curl.pdf  used on input line 1076.
+Package pdftex.def Info: figures/spatial_curl.pdf  used on input line 1093.
 (pdftex.def)             Requested size: 131.43102pt x 101.94pt.
 <figures/spatial_divergence.pdf, id=253, 517.935pt x 404.51125pt>
 File: figures/spatial_divergence.pdf Graphic file (type pdf)
 <use figures/spatial_divergence.pdf>
-Package pdftex.def Info: figures/spatial_divergence.pdf  used on input line 107
-7.
+Package pdftex.def Info: figures/spatial_divergence.pdf  used on input line 109
+4.
 (pdftex.def)             Requested size: 131.43102pt x 102.64595pt.
-
-Underfull \vbox (badness 6332) has occurred while \output is active []
-
 <figures/CC_slice_orig2D.pdf, id=254, 318.18875pt x 179.67125pt>
 File: figures/CC_slice_orig2D.pdf Graphic file (type pdf)
 <use figures/CC_slice_orig2D.pdf>
-Package pdftex.def Info: figures/CC_slice_orig2D.pdf  used on input line 1111.
+Package pdftex.def Info: figures/CC_slice_orig2D.pdf  used on input line 1128.
 (pdftex.def)             Requested size: 143.37996pt x 80.96097pt.
 <figures/CC_slice_deform2D.pdf, id=255, 318.18875pt x 179.67125pt>
 File: figures/CC_slice_deform2D.pdf Graphic file (type pdf)
 <use figures/CC_slice_deform2D.pdf>
-Package pdftex.def Info: figures/CC_slice_deform2D.pdf  used on input line 1113
+Package pdftex.def Info: figures/CC_slice_deform2D.pdf  used on input line 1130
 .
 (pdftex.def)             Requested size: 143.37996pt x 80.96097pt.
 <figures/CC_slice_deform2D_best.pdf, id=256, 317.185pt x 179.67125pt>
 File: figures/CC_slice_deform2D_best.pdf Graphic file (type pdf)
 <use figures/CC_slice_deform2D_best.pdf>
 Package pdftex.def Info: figures/CC_slice_deform2D_best.pdf  used on input line
- 1115.
+ 1132.
 (pdftex.def)             Requested size: 143.37996pt x 81.2214pt.
 <figures/CC_slice_orig3D_zoom.pdf, id=257, 334.24875pt x 172.645pt>
 File: figures/CC_slice_orig3D_zoom.pdf Graphic file (type pdf)
 <use figures/CC_slice_orig3D_zoom.pdf>
 Package pdftex.def Info: figures/CC_slice_orig3D_zoom.pdf  used on input line 1
-124.
+141.
 (pdftex.def)             Requested size: 215.06628pt x 111.08777pt.
 <figures/CC_slice_deform3D_zoom.pdf, id=258, 334.24875pt x 172.645pt>
 File: figures/CC_slice_deform3D_zoom.pdf Graphic file (type pdf)
 <use figures/CC_slice_deform3D_zoom.pdf>
 Package pdftex.def Info: figures/CC_slice_deform3D_zoom.pdf  used on input line
- 1126.
+ 1143.
 (pdftex.def)             Requested size: 215.06628pt x 111.08777pt.
+ (./dwiregistering.bbl
+Underfull \vbox (badness 2096) has occurred while \output is active []
+
  [12 <./figures/bins_mse.pdf> <./figures/bins_curl.pdf> <./figures/bins_div.pdf
-> <./figures/kappa_mse.pdf> <./figures/kappa_curl.pdf> <./figures/kappa_div.pdf
 >]
-
-LaTeX Warning: Text page 13 contains only floats.
-
-
-Overfull \vbox (3.61797pt too high) has occurred while \output is active []
-
-
-(./dwiregistering.bbl
-Underfull \vbox (badness 1215) has occurred while \output is active []
-
- [13 <./figures/spatial_mse.pdf> <./figures/spatial_curl.pdf> <./figures/spatia
-l_divergence.pdf> <./figures/CC_slice_orig2D.pdf> <./figures/CC_slice_deform2D.
-pdf> <./figures/CC_slice_deform2D_best.pdf> <./figures/CC_slice_orig3D_zoom.pdf
-> <./figures/CC_slice_deform3D_zoom.pdf>]
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/it' in size <8.5> not available
 (Font)              size <8> substituted on input line 21.
 
+[13 <./figures/kappa_mse.pdf> <./figures/kappa_curl.pdf> <./figures/kappa_div.p
+df> <./figures/spatial_mse.pdf> <./figures/spatial_curl.pdf> <./figures/spatial
+_divergence.pdf> <./figures/CC_slice_orig2D.pdf> <./figures/CC_slice_deform2D.p
+df> <./figures/CC_slice_deform2D_best.pdf>]
 Missing character: There is no Ã in font cmr8!
 Missing character: There is no ¼ in font cmr8!
 
@@ -1308,7 +1296,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--128
 \OT1/cmr/m/n/8.5 suite-of-functions-to-perform-uniform-sampling-of-a-
  []
 
-[14]
+[14 <./figures/CC_slice_orig3D_zoom.pdf> <./figures/CC_slice_deform3D_zoom.pdf>
+]
 Underfull \hbox (badness 1902) in paragraph at lines 206--209
 []\OT1/cmr/m/n/8.5 Zhang, P., Ni-etham-mer, M., Shen, D., Yap, P.T.:
  []
@@ -1322,13 +1311,13 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 18366 strings out of 492982
- 372040 string characters out of 6134897
- 410458 words of memory out of 5000000
- 21516 multiletter control sequences out of 15000+600000
+ 18369 strings out of 492982
+ 372069 string characters out of 6134897
+ 410504 words of memory out of 5000000
+ 21519 multiletter control sequences out of 15000+600000
  16715 words of font info for 65 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 63i,24n,87p,609b,1122s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,24n,87p,609b,1120s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/tex
@@ -1358,7 +1347,7 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on dwiregistering.pdf (15 pages, 3846871 bytes).
+Output written on dwiregistering.pdf (15 pages, 3847672 bytes).
 PDF statistics:
  451 PDF objects out of 1000 (max. 8388607)
  298 compressed objects within 3 object streams

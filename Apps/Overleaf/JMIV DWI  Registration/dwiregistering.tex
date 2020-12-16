@@ -51,9 +51,22 @@
 
 \newcommand\red[1]{\color{red}#1}
 \newcommand\violet[1]{\color{violet}#1}
-\newcommand{\francois}[1]{{\color{red}\textbf{Francois: }#1}}
-\newcommand{\Sune}[1]{{\color{green}\textbf{Sune: }#1}}
 
+% Debug package
+\usepackage{ifthen} 
+\newboolean{Drafty}% 
+\setboolean{Drafty}{true}%
+% comment the previous line and uncomment the next one to make notes disappear!
+%\setboolean{Drafty}{false}
+\ifthenelse{\boolean{Drafty}}%
+{%
+    \newcommand{\francois}[1]{{\color{red}\textbf{Francois: }#1}}
+    \newcommand{\Sune}[1]{{\color{green}\textbf{Sune: }#1}} 
+}%
+{%
+    \newcommand{\francois}[1]{{}}
+    \newcommand{\Sune}[1]{{}} 
+}%
 
 
 \usepackage{enumitem}
@@ -146,9 +159,7 @@
 \section{Introduction}
 \francois{Attempt to start more "generically":}
 In this work, we study registration problems for images of the type $I:\Omega\to \Ff(\PP^2)$ with $\Omega$ an open, bounded domain of $\RR^3$, 
-the image domain, $\PP^2$ is the projective plane of directions in $\RR^3$ and $\Ff(\PP^2)$ is a suitable function space on $\PP^2$: each $I(\bx)$ is a function  $I(\bx):\PP^2\to\RR$ which weights three-dimensional directions . We may and will also reinterpret such an image $I$ as an image $\bI:\Omega\times\PP^2\to\RR$, $\bI(\bx, \bs) = I(\bx)(\bs)$. These functions can be used to represent orientation distribution functions often used in Diffusion Weighted Imaging (DWI).
-\francois{Could we use distrubutions on $\PP^2$ instead of functions? It would be closer to the classical ODFs? Need to check whether the rest of the text
-would need adaptation or not.}
+the image domain, $\PP^2$ is the projective plane of directions in $\RR^3$ and $\Ff(\PP^2)$ is a suitable function space on $\PP^2$: each $I(\bsx)$ is a function  $I(\bsx):\PP^2\to\RR$ which measures a phenomenon along a three-dimensional direction. We may and will also reinterpret such an image $I$ as an image $\bI:\Omega\times\PP^2\to\RR$, $\bI(\bsx, \bsv) = I(\bsx)(\bsv)$. These functions can be used to represent orientation distribution functions often used in Diffusion Weighted Imaging (DWI).
 
 DWI is a non-invasive Magnetic Resonance Imaging (MRI) protocol that can
 be used to infer microstructures of biological tissues by tracking the movement of water molecules, otherwise
@@ -266,7 +277,8 @@ a variational approach to image registration was presented. The LOR framework
 measures as linear and non-linear functions of density estimates for scalar-valued images.
 
 
-\section{Locally Orderless DWI}
+\section{Locally Orderless Directional Imaging}
+\francois{LORD sounds cool:-) (maybe not in Dansih) and would allow us to defer DWI explanations at some other point.} 
 \label{sec:lor_dwi}
 \subsection{Notations}
 We start by introducing a few necessary notations. $\Omega\subset \mathbb R^3$ is the
@@ -284,7 +296,11 @@ antipodal symmetric function $\tilde{f}:\mathbb{S}^2\to \mathbb{R}$. Conversely,
 antipodal symmetric function $g:\mathbb S^2\to \mathbb R$ factors through $\mathbb P^2$.
 A spatio-directional image can (and will) be lifted to an antipodal symmetric image
 $\tilde{\bm I}:\Omega\times \mathbb S^2$:
-$\tilde{\bm I}(\bm x, -\bm v) =\tilde{\bm I}(\bm x, \bm v)$.  We will denote by $\bm I$
+$\tilde{\bm I}(\bm x, -\bm v) =\tilde{\bm I}(\bm x, \bm v)$.  Such a lift allows to represent $\PP^2$-functions as $\SS^2$ ones, 
+with the benefit that $\SS^2$ is an oriented manifold, while $\PP^2$ is not. This means in particular that $\PP^2$ does not have a global volume form.
+On the other hand, $\SS^2$ has, and we use the one induced by its standard Riemannian metric.
+
+We will denote by $\bm I$
 both the spatio-directional image and its antipodal symmetric lifting in the following.
 
 \subsection{Recall on the LOR Framework}
@@ -315,12 +331,12 @@ where the linear measure $f(i,j)$ includes e.g. sum of squared differences and H
 the non-linear $f(p(i,j))$ includes e.g. MI, normalized MI (NMI), see
 \cite{darknersporring2012pami} for details.
 
-\subsection{The LOR-DWI framework}
-
+\subsection{The LORD framework}
+\francois{LORD! I like it!}
 This work addresses the estimation of the image similarity $\mathcal F$ of DWI in the
 context of nonrigid registration an extension of our previous work
 \cite{jensen2015locally}.
-In this context, $\bm I$ and $\bm J$ are spatio-directional signals. Specifically, DWI MR
+In this context, $\bI$ and $\bJ$ are spatio-directional signals. Specifically, DWI MR
 attenuation signals at location $\bm x$, for a gradient direction $\bm v$, are modeled by
 $S(\bm x,\bm v) = S_0(\bm x) e^{-b\bm I(\bm x,\bm v)}$ \ \cite{tao2006method} and apparent
 diffusion coefficients volumes are given by
@@ -360,21 +376,22 @@ symmetrized von Mises-Fisher \cite{jupp1989unified} distribution or a symmetrize
 kernel could be considered.
 
 \subsubsection{Action on Orientation}
-A transformation $\phi:\Omega\to \Omega$ acts on directions via its Jacobian: at
-${\bm x}\in \Omega$, $J_x\phi$ sends $\mathbb R\bm v$ to $\mathbb R J_{\bm x}\phi \bm v$
-which is well-defined as soon as $\det(J_{\bm x}\phi)\not = 0$ which is the case if we
-assume that $\phi$ is diffeomorphic. Via the representation
-$\mathbb{P}^2\simeq \mathbb{S}^2/\{\pm1\}$, we can write
-$\mathbb P_{\bm x}\phi:\{\pm v\} \mapsto \{\pm\frac{J_{\bm x}\bm v}{|J_{\bm x}\bm v|}\}$.
+The Jacobian $J_{\bsx}\phi$ is denoted by $\phi_{\bsx}$ in the sequel.
+A diffeomorphic transformation $\phi:\Omega\to \Omega$ acts on directions via its Jacobian: at
+$\bsx\in \Omega$, $\phi_{\bsx}$ sends $\RR\bsv$ to $\RR \phi_{\bsx} \bsv$, this is 
+well-defined as $\det(J_{\bsx}\phi)\not = 0$. Thus, for each $\bsx\in \Omega$,  $\phi_{\bsx}$ gives rise to projective 
+linear transformation $\PP\phi_{\bsx}$. Using the representation
+$\PP^2\simeq \SS^2/\{\pm1\}$, we can write
+$\PP\phi_{\bsx}:\{\pm \bsv\} \mapsto \{\pm\frac{\phi_{\bsx}\bsv}{|\phi_{\bsx}\bsv|}\}$.
 We denote by $\psi$ the mapping
-$(\bm x,\bm v)\mapsto \frac{J_{\bm x}\bm v}{|J_{\bm x}\bm v|}$. Because it will only
-appear inside an antipodal symmetric kernel, $\psi_{\bm x} = \psi(\bm x,\cdot)$ represents
-$\mathbb P_{\bm x}\phi$ \emph{without ambiguity}. Because of spatial convolutions, we
-assume that $\phi$ can be extented to $\mathbb R^3$, assuming that it is the identity out
-of a compact set $D$ containing $\Omega$.
+$(\bsx,\bsv)\mapsto \frac{\phi_{\bsx}\bsv}{|\phi_{\bsx}\bsv|}$. Because it will only
+appear inside an antipodal symmetric kernel, $\psi_{\bsx} = \psi(\bsx,\cdot)$ represents
+$\PP{\phi_{\bsx}}$ \emph{without ambiguity}.
 
 \subsubsection{Density, orientation and transformation}
-In the following, we will often omit the parameter $\bm x$. We set $\Phi = (\phi,\psi)$,
+Because of spatial convolutions, we assume that $\phi$ can be extended to $\RR^3$, by assuming that it is the identity out
+of a compact set $D$ containing $\Omega$.
+In the following, we will often omit the parameter $\bsx$. We set $\Phi = (\phi,\psi)$,
 and we write the joint histogram and density for similarity in image registration as
 \begin{align}
   h_{\beta\alpha\sigma\kappa}&(i,j|\Phi,\bm x)=\\ 

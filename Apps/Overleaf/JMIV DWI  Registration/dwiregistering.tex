@@ -158,8 +158,13 @@
 
 \section{Introduction}
 \francois{Attempt to start more "generically":}
-In this work, we study registration problems for images of the type $I:\Omega\to \Ff(\PP^2)$ with $\Omega$ an open, bounded domain of $\RR^3$, 
-the image domain, $\PP^2$ is the projective plane of directions in $\RR^3$ and $\Ff(\PP^2)$ is a suitable function space on $\PP^2$: each $I(\bsx)$ is a function  $I(\bsx):\PP^2\to\RR$ which measures a phenomenon along a three-dimensional direction. We may and will also reinterpret such an image $I$ as an image $\bI:\Omega\times\PP^2\to\RR$, $\bI(\bsx, \bsv) = I(\bsx)(\bsv)$. These functions can be used to represent orientation distribution functions often used in Diffusion Weighted Imaging (DWI).
+In this work, we study registration problems for images of the type $I:\Omega\to \Ff(\PP^2)$ with 
+$\Omega$ an open, bounded domain of $\RR^3$, the image domain, $\PP^2$ is the projective plane of 
+directions in $\RR^3$ and $\Ff(\PP^2)$ is a suitable function space on $\PP^2$: each $I(\bsx)$ is a 
+function  $I(\bsx):\PP^2\to\RR$ which provides a measure of a  phenomenon along a three-dimensional 
+direction. We may and will also reinterpret such an image $I$ as an image 
+$\bI:\Omega\times\PP^2\to\RR$, $\bI(\bsx, \bsv) = I(\bsx)(\bsv)$. 
+These functions can be used to represent orientation distribution functions used in Diffusion Weighted Imaging (DWI).
 
 DWI is a non-invasive Magnetic Resonance Imaging (MRI) protocol that can
 be used to infer microstructures of biological tissues by tracking the movement of water molecules, otherwise
@@ -277,11 +282,11 @@ a variational approach to image registration was presented. The LOR framework
 measures as linear and non-linear functions of density estimates for scalar-valued images.
 
 
-\section{Locally Orderless Directional Imaging}
-\francois{LORD sounds cool:-) (maybe not in Dansih) and would allow us to defer DWI explanations at some other point.} 
+\section{Locally Orderless  Directional Imaging}
+\francois{so that it ends up as LORD, sounds cool:-) (maybe not in Dansih) and would allow us to defer DWI explanations at some other point.} 
 \label{sec:lor_dwi}
 \subsection{Notations}
-We start by introducing a few necessary notations. $\Omega\subset \mathbb R^3$ is the
+$\Omega\subset \mathbb R^3$ is the
 spatial domain of the images under consideration. A scalar image is a function
 $\bm I:\Omega\to\mathbb R^3$. We assume that we can extend it on the whole $\mathbb R^3$,
 for instance by extending it with 0. The projective space of directions of $\mathbb R^3$
@@ -290,11 +295,11 @@ will encounter \emph{spatio-directional} images
 $\bm I:\Omega\times \mathbb P^2 \to \mathbb R$, which we similarly assume too be
 extendable to $\mathbb R^3\times \mathbb P^2$. This is necessary in both cases in order to
 define their spatial smoothing via convolution. We use the following elementary property:
-As $\mathbb P^2$ can naturally be identified as the quotient $\mathbb S^2/\{\pm 1\}$ by
+As $\mathbb P^2$ is naturally identified as the quotient $\mathbb S^2/\{\pm 1\}$ by
 the antipodal symmetry, a function $f:\mathbb P^2\to \mathbb R$ can be lifted to an
 antipodal symmetric function $\tilde{f}:\mathbb{S}^2\to \mathbb{R}$. Conversely, any
 antipodal symmetric function $g:\mathbb S^2\to \mathbb R$ factors through $\mathbb P^2$.
-A spatio-directional image can (and will) be lifted to an antipodal symmetric image
+A spatio-directional image can and will be lifted to an antipodal symmetric image
 $\tilde{\bm I}:\Omega\times \mathbb S^2$:
 $\tilde{\bm I}(\bm x, -\bm v) =\tilde{\bm I}(\bm x, \bm v)$.  Such a lift allows to represent $\PP^2$-functions as $\SS^2$ ones, 
 with the benefit that $\SS^2$ is an oriented manifold, while $\PP^2$ is not. This means in particular that $\PP^2$ does not have a global volume form.
@@ -328,11 +333,11 @@ similarity lets us use a set of generalized similarity measures, the linear and 
   \mathcal{F}_{lin}=\int_{\Lambda^2}f(i,j)p(i,j)di\; dj\\ \mathcal{F}_{non-lin}=\int_{\Lambda^2}f(p(i,j))di\; dj
 \end{align}
 where the linear measure $f(i,j)$ includes e.g. sum of squared differences and Huber, and
-the non-linear $f(p(i,j))$ includes e.g. MI, normalized MI (NMI), see
+the non-linear\linebreak $f(p(i,j))$ includes e.g. MI, normalized MI (NMI), see
 \cite{darknersporring2012pami} for details.
 
 \subsection{The LORD framework}
-\francois{LORD! I like it!}
+\francois{LORD! of course some mismatch with the MICCAI paper...}
 This work addresses the estimation of the image similarity $\mathcal F$ of DWI in the
 context of nonrigid registration an extension of our previous work
 \cite{jensen2015locally}.
@@ -393,45 +398,82 @@ Because of spatial convolutions, we assume that $\phi$ can be extended to $\RR^3
 of a compact set $D$ containing $\Omega$.
 In the following, we will often omit the parameter $\bsx$. We set $\Phi = (\phi,\psi)$,
 and we write the joint histogram and density for similarity in image registration as
-\begin{align}
-  h_{\beta\alpha\sigma\kappa}&(i,j|\Phi,\bm x)=\\ 
-                      &\int_{\mathbb R^3 \times S^2}P_\beta(\bm I_{\sigma\kappa}(\phi(\bm x),\psi(\bm v))-i)
-                        P_\beta(\bm J_{\sigma\kappa}(\bm x,\bm v)-j)\nonumber \\
-                      &W_\alpha(\bm \tau-\bm x)d\bm \tau\times d\bm v \nonumber \label{eq:densityreg} \\
-                      &p_{\beta\alpha\sigma\kappa}(i,j|\Phi,\bm x)=\frac{h_{\beta\alpha\sigma\kappa}(i,j|\Phi,\bm x)}
-                       {\int_{\Lambda^{2}} h_{\beta\alpha\sigma\kappa}(i,j| \Phi,\bm x)dl\;dk} \;\;.
-\end{align}
-Assume that $W$ is a Gaussian kernel with standard deviation $\alpha$. If we left
-$\alpha\rightarrow\infty$, we would obtain full spatial integration and can ignore the
-integration scale $\alpha$.
+\begin{multline}
+h_{\bsI\circ\Phi,\bsJ;\sigma\kappa\beta\alpha}(i,j|\bsx)=\\ 
+                      \int_{\mathbb R^3 \times \SS^2}P_\beta(\bm I_{\sigma\kappa}(\phi(\bm x),\psi_{\bsx}(\bm v))-i)
+                        P_\beta(\bm J_{\sigma\kappa}(\bm x,\bm v)-j) \times\\
+                      W_\alpha(\bm \tau-\bm x)d\bm \tau d\bm v \label{eq:densityreg}
+\end{multline}
+\vspace{-5mm}
+\begin{multline}
+ p_{\bsI\circ\Phi,\bsJ_{\sigma\kappa\beta\alpha};}(i,j|\bsx)=\frac{h_{\bsI\circ\Phi,\bsJ;\sigma\kappa\beta\alpha}(i,j|\bsx)}
+                       {\int_{\Lambda^{2}} h_{\bsI\circ\Phi,\bsJ;\sigma\kappa\beta\alpha}(l,k|\bsx)dl\;dk}\;.
+\end{multline}
+If one assumes that $W_\alpha$ is a Gaussian kernel with standard deviation $\alpha$ and we leave
+$\alpha\rightarrow\infty$, we obtain full spatial integration, and we can write the joint histogram
+and joint probability density functions (PDF)
+\begin{multline}
+\label{eq:histo_fullspatial}
+	h_{\bsI\circ\Phi,\bsJ;\sigma\kappa\beta}(i, j)=\\
+	\int_{\RR^3\times\SS^2}\!\!\!\!\!P_\beta(\bsI_{\sigma\kappa}(\phi(\bsx),\psi_{\bsx}(\bsv))-i)
+	P_\beta(\bsJ_{\sigma\kappa}(\bsx,\bsv)-j)\,d\bsx d\bsv
+\end{multline}
+\vspace{-5mm}
+\begin{equation}
+	p_{\bsI\circ\Phi,\bsJ,\sigma\kappa\beta}(i,j) = \frac{h_{\bsI\circ\Phi,\bsJ;\sigma\kappa\beta}(i, j)}
+	{\int_{\Lambda^2}h_{\bsI\circ\Phi,\bsJ;\sigma\kappa\beta}(l,k)dl\;dk}\;.~~~~~~~\hfil
+\end{equation}
+Similar formulas are obtained single histograms $h_{\bsK;\sigma\kappa\beta}$ and corresponding 
+PDF $p_{\bsK;\sigma\kappa\beta}$ with $K = \bsI\circ\Phi$ and $\bsJ$, 
+they are just the appropriate marginals of the joint distribution.
+This is the situation we consider in rest of this work.
 
-\subsection{LOR-DWI and Free Form Deformation}
+\subsection{LORD and Free Form Deformations}
 In \cite{jensen2015locally}, we assumed that $\phi$ was a global affine transformation,
-with $\psi_x = \psi$ being the projectivization of its linear part. In the present work,
+with $\psi_{\bsx} = \psi$ being the projectivization of its linear part. In the present work,
 we assume $\phi$ to be a nonrigid transformation, and we use Rueckert \textit{et al.\/}
 framework \cite{rueckert1999nonrigid} where the transformation $\phi$ is given as a
 hierarchical spline representation \emph{linearly} parameterized by a spatial grid of
 control points ${\bm c}$. In the next subsection, we use its vectorized form, so that
 $\phi = \bm B\bm c$, $\Phi_{\bm c} = (\phi_{\bm c},\psi_{\bm c})$. We seek the
-transformation $\Phi^*_{\bm c}$ which maximizes the regularized NMI
+transformation $\Phi^*_{\bsc}$ which maximizes the regularized NMI
 \begin{align}
-  \Phi_c^* = \operatorname*{arg\,max}_c \mathcal M(\Phi_c) = \operatorname*{arg\,max}_c \mathcal F(\bm I\circ\Phi_c,\bm J)+\mathcal S({\Phi_c})
+  \Phi_{\bsc^*} = \operatorname*{arg\,max}_{\bsc} \mathcal M(\Phi_{\bsc}) = \operatorname*{arg\,max}_{\bsc} \mathcal F(\bm I\circ\Phi_{\bsc},\bm J)+\mathcal S({\Phi_{\bsc}})
     \label{eq:argmax}
 \end{align}
-The dependency of $\mathcal M$ in $\bm c$ is complex. The following dependency diagram
-(Fig. \ref{fig:dependcygraph}) for the mutual information term illustrates it.
-\begin{figure}[ht]
 
+We use quasi-Newton methods to compute an optimum of \Cref{eq:argmax}, in particular
+L-BFGS from \cite{schmidt2005minfunc}, and thus need to compute the gradient of the
+similarity with respect to control points vector $\bm c$. 
+The dependency of $\Mm$ in $\bsc$ appears deep inside its definition, 
+this will be reflected in its differential w.r.t. $\bsc$. In the next paragraph, we provide some 
+details of its computation for the similarity term, and in paragraph \ref{sec:reg}, 
+we detail computations the regularisation term.
+
+\subsection{Estimation and optimization of similarity} 
+The NMI term is defined as
+\begin{equation}
+	\text{NMI}(\bsI\circ\Phi_{\bsc}, \Jj) = \frac{H(\bsI\circ\Phi_{\bsc}) + H(\bsJ) }{H(\bsI\circ\Phi_{\bsc}, \bsJ)}.
+\end{equation} where the different terms are differential entropies $H(p) = -\int p(t)\log p(t)\,dt$.
+The following diagram (Fig. \ref{fig:dependcygraph}) exhibits the PDFs that are used in the differential 
+entropies which form the NMI term and illustrates its dependency in $\bsc$, which occurs only through 
+$\Phi_{\bsc}$. A full formula for the gradient is long and not informative for the present work. Actually, 
+many of the required calculations are similar to the ones in  \cite{rueckert1999nonrigid,darknersporring2012pami,jensen2015locally}, 
+they correspond to the red frame in Fig. \ref{fig:dependcygraph}, and are obtained by application of standard derivation rules.  
+ The computations in this paper which differ from the aforementioned are the ones 
+corresponding to the blue frame in Fig. \ref{fig:dependcygraph}, where the directional terms are "uncovered". 
+\francois{This paragraph is IMHO poorly written...I should rewor(d/k) this part...}
+\begin{figure}[ht]
 \begin{equation*}
 \begin{tikzcd}[column sep=0.4cm,row sep=0.5cm]
-  ~& NMI( \bm I_{\sigma\kappa}\circ\Phi_{\bm c},\bm J_{\sigma\kappa};\beta)&~\\
+  ~& NMI( \bsI\circ\Phi_{\bsc},\bsJ;\sigma\kappa\beta)&~\\
   H_{\bm I_{\sigma\kappa}\circ\Phi_{\bm c};\beta} \ar[ur]&  
   H_{\bm J_{\sigma\kappa};\beta}\ar[u] & 
   H_{\bm I_{\sigma\kappa}\circ\Phi_{\bm c}, \bm J_{\sigma\kappa};\beta}\ar[lu]\\
-  p_{\beta,\bm I_{\sigma\kappa}\circ\Phi_{\bm c}}\ar[u]  & 
-  p_{\beta,\bm J_{\sigma\kappa}}\ar[u]  & 
-  p_{\beta,\bm I_{\sigma\kappa}\circ\Phi_{\bm c}, \bm J_{\sigma\kappa}}\ar[u]\\
-  ~ & h_{\beta,\bm I_{\sigma\kappa}\circ\Phi_{\bm c},\bm J_{\sigma\kappa}}\ar[ul]\ar[u]\ar[ur]& ~\\
+  p_{\bm I_{\sigma\kappa}\circ\Phi_{\bm c};\beta}\ar[u]  & 
+  p_{\bm J_{\sigma\kappa};\beta}\ar[u]  & 
+  p_{\bm I_{\sigma\kappa}\circ\Phi_{\bm c}, \bm J_{\sigma\kappa};\beta}\ar[u]\\
+  ~ & h_{\bm I_{\sigma\kappa}\circ\Phi_{\bm c},\bm J_{\sigma\kappa};\beta}\ar[ul]\ar[u]\ar[ur]& ~\\
   \bm I_{\sigma\kappa}(\phi_{\bm c},\psi_{\bm c})\ar[ur]&\psi_{\bm c}\ar[l]&\bm J_{\sigma\kappa}\ar[ul]\\
   \boxed{\bm c}\ar[r ]& \phi_{\bm c}\ar[lu] \ar[u]&
   \ar[from=1-1,to=1-3,color=red,dash,line width=0.65pt,start
@@ -475,15 +517,7 @@ The dependency of $\mathcal M$ in $\bm c$ is complex. The following dependency d
   contains the part which extends the LOR framework to the LOR-DWI.}
     \label{fig:dependcygraph}
 \end{figure}
-
-\subsection{Estimation and optimization of similarity} 
-We use quasi-Newton methods to compute an optimum of \Cref{eq:argmax}, in particular
-L-BFGS\cite{} from \cite{schmidt2005minfunc}, and thus need to compute the gradient of the
-similarity with respect to control points vector $\bm c$. Most of the required
-calculations are provided in
-\cite{rueckert1999nonrigid,darknersporring2012pami,jensen2015locally}, they correspond to
-the red frame in Figure \ref{fig:dependcygraph}, a full formula for the gradient is long
-and not informative for the present work. We therefore only describe how
+ We therefore only describe how
 spatio-directional smoothing contributes to the image similarity, i.e., the part of Figure
 \ref{fig:dependcygraph} enclosed in the blue frame. Thanks to the LOR-DWI representation,
 the present extension only appears within the spatio-directional smoothing of $\bm I$.
@@ -573,6 +607,7 @@ Putting things together, the Jacobian with respect to the control point paramete
 
 
 \subsection{Regularization}
+\label{sec:reg}
 % Francois: reformulated from Henrik's paragraph.
 So far, we have not specified the form of the regularizer $\mathcal S(\Phi_{\bm c})$ in
 \Cref{eq:argmax}.  The regularization has received little attention due to the inherent
